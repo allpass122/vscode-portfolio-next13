@@ -98,7 +98,7 @@ function Sidebar() {
                 <div
                   key={title}
                   className={cn(
-                    "flex flex-row items-center rounded-md p-1 text-slate-100 hover:bg-slate-700",
+                    "flex cursor-pointer flex-row items-center rounded-md p-1 text-slate-100 hover:bg-slate-700",
                     disable && "text-slate-400"
                   )}
                   onClick={() => {
@@ -121,7 +121,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="between flex w-12 flex-col justify-between bg-dark-second text-slate-400">
+    <div className="between flex w-12 select-none flex-col justify-between bg-dark-second text-slate-400">
       <ActivityBar />
       <SettingComponent />
     </div>
