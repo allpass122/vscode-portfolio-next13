@@ -11,6 +11,7 @@ import { useState } from "react";
 function Sidebar() {
   const router = useRouter();
   const pathname = usePathname();
+  const lsKey = "s-ac";
 
   const allItems: { title: string; path: string; icon: React.ReactNode; disabled?: boolean }[] = [
     {
@@ -40,9 +41,10 @@ function Sidebar() {
       icon: <Mail className={"size-3/5 "} />,
     },
   ];
-  // enhancement: localStorage? animation
+  const localStorageData = localStorage.getItem(lsKey);
   const [disabledRecord, setDisabledRecord] = useState<{ [key: string]: boolean }>(
-    Object.fromEntries(allItems.map((item) => [item.title, item.disabled ?? false]))
+    (localStorageData && JSON.parse(localStorageData)) ??
+      Object.fromEntries(allItems.map((item) => [item.title, item.disabled ?? false]))
   );
 
   function ActivityBar() {
@@ -101,6 +103,10 @@ function Sidebar() {
                   )}
                   onClick={() => {
                     setDisabledRecord((prev) => ({ ...prev, [title]: !disable }));
+                    localStorage.setItem(
+                      lsKey,
+                      JSON.stringify({ ...disabledRecord, [title]: !disable })
+                    );
                   }}
                 >
                   {!disable && <Check className="size-4" />}
