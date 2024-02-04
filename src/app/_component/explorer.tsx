@@ -80,12 +80,12 @@ function Explorer({
               !disabledRecord[item.title] && (
                 <div
                   key={item.title}
-                  className="my-1.5 flex cursor-pointer flex-row items-center gap-1 rounded-sm px-4 text-sm font-light hover:bg-dark-second"
+                  className="flex cursor-pointer flex-row items-center gap-1 rounded-sm px-4 py-1.5 text-sm font-light hover:bg-dark-second"
                   onClick={() => {
                     router.push(item.path);
                   }}
                 >
-                  {item.icon} {item.title}
+                  {item.icon} {item.label}
                 </div>
               )
           )}
