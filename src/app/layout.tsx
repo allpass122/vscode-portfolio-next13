@@ -1,9 +1,19 @@
+import { cn } from "@/utils/cn";
+import { AlertTriangle, BellDot, XCircle } from "lucide-react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
+import { IoIosGitBranch } from "react-icons/io";
+import { TbBrandNextjs } from "react-icons/tb";
 import "./globals.css";
+import { IoCheckmarkDone } from "react-icons/io5";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -15,7 +25,7 @@ export const metadata: Metadata = {
 
 function HeaderBar() {
   return (
-    <div className="text-white bg-dark-primary flex h-8 select-none items-center px-2">
+    <div className="flex h-8 select-none items-center bg-dark-primary px-2 text-white">
       <Image
         src="/vscode_icon.svg"
         alt="vscode logo"
@@ -25,7 +35,7 @@ function HeaderBar() {
       <div className="ml-2 mr-auto flex flex-auto flex-wrap content-center">
         {["File", "Edit", "View", "Go", "Run", "Terminal", "Help"].map((text) => (
           <p
-            className="hover:bg-slate-400 cursor-pointer rounded-sm px-2 py-0.5 text-sm"
+            className="cursor-pointer rounded-sm px-2 py-0.5 text-sm hover:bg-slate-400"
             key={text}
           >
             {text}
@@ -36,10 +46,62 @@ function HeaderBar() {
         {"Dempsey Huang - Visual Studio Code"}
       </p>
       <div className="ml-auto flex flex-auto">
-        <span className="bg-yellow-400 ml-auto mr-1 flex size-3 cursor-pointer rounded-full"></span>
-        <span className="bg-green-400 mx-1 flex size-3 cursor-pointer rounded-full"></span>
-        <span className="bg-red-400 mx-1 flex size-3 cursor-pointer rounded-full"></span>
+        <span className="ml-auto mr-1 flex size-3 cursor-pointer rounded-full bg-yellow-400"></span>
+        <span className="mx-1 flex size-3 cursor-pointer rounded-full bg-green-400"></span>
+        <span className="mx-1 flex size-3 cursor-pointer rounded-full bg-red-400"></span>
       </div>
+    </div>
+  );
+}
+
+function Footer() {
+  function GitBranchComponent() {
+    return (
+      <div className="flex flex-row items-center gap-3">
+        <a
+          href="https://github.com/allpass122/vscode-portfolio-next13"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className="flex flex-row items-center gap-1 rounded-sm p-0.5 text-xs hover:bg-slate-400">
+            <IoIosGitBranch className="size-3" />
+            main
+          </div>
+        </a>
+        <div className="flex flex-row items-center gap-2 rounded-sm p-0.5 text-xs hover:bg-slate-400">
+          <div className="flex flex-row items-center gap-1">
+            <XCircle className="size-3" />0
+          </div>
+          <div className="flex flex-row items-center gap-1">
+            <AlertTriangle className="size-3" /> 0
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  function ToolBoxComponent() {
+    return (
+      <div className="flex flex-row items-center gap-3">
+        <div className="flex flex-row items-center gap-1 rounded-sm p-0.5 text-xs hover:bg-slate-400">
+          <TbBrandNextjs className="size-4" />
+          Powered by Next.js
+        </div>
+        <div className="flex flex-row items-center gap-1 rounded-sm p-0.5 text-xs hover:bg-slate-400">
+          <IoCheckmarkDone className="size-4" />
+          Prettier
+        </div>
+        <div className="flex flex-row items-center gap-1 rounded-sm p-0.5 text-xs hover:bg-slate-400">
+          <BellDot className="size-4" />
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex h-6 select-none items-center justify-between bg-dark-primary px-2 text-white">
+      <GitBranchComponent />
+      <ToolBoxComponent />
     </div>
   );
 }
@@ -51,9 +113,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cn(inter.className, "flex min-h-screen flex-col")}>
         <HeaderBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
