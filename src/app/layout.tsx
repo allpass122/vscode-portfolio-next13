@@ -3,8 +3,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "./_component/footer";
 import HeaderBar from "./_component/headerBar";
-import Side from "./_component/side";
 import "./globals.css";
+import dynamic from "next/dynamic";
+
+const Side = dynamic(() => import("./_component/side"), { ssr: false });
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

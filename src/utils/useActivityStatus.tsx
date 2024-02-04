@@ -1,5 +1,4 @@
 import { Mail, Pencil } from "lucide-react";
-import { useState } from "react";
 import { BiCodeAlt } from "react-icons/bi";
 import { VscFiles, VscGithub } from "react-icons/vsc";
 
@@ -38,12 +37,3 @@ export const activityItems: {
     icon: <Mail className={"size-3/5 "} />,
   },
 ];
-export function useActivityStatus() {
-  const localStorageData = localStorage.getItem(lsKey);
-  const [disabledRecord, setDisabledRecord] = useState<{ [key: string]: boolean }>(
-    (localStorageData && JSON.parse(localStorageData)) ??
-      Object.fromEntries(activityItems.map((item) => [item.title, item.disabled ?? false]))
-  );
-
-  return { disabledRecord, setDisabledRecord };
-}

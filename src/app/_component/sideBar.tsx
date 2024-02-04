@@ -6,6 +6,7 @@ import { Popover } from "@headlessui/react";
 import { Check, CircleUserRound, Settings } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { Dispatch, SetStateAction } from "react";
+import { useLocalStorage } from "react-use";
 
 function Sidebar({
   disabledRecord,
@@ -22,6 +23,9 @@ function Sidebar({
 }) {
   const router = useRouter();
   const pathname = usePathname();
+  const [localStorageData, setLocalStorageData, remove] = useLocalStorage<{
+    [key: string]: boolean;
+  }>(lsKey);
 
   function ActivityBar() {
     return (
@@ -79,10 +83,11 @@ function Sidebar({
                   )}
                   onClick={() => {
                     setDisabledRecord((prev) => ({ ...prev, [title]: !disable }));
-                    localStorage.setItem(
-                      lsKey,
-                      JSON.stringify({ ...disabledRecord, [title]: !disable })
-                    );
+                    setLocalStorageData({ ...disabledRecord, [title]: !disable });
+                    // localStorage.setItem(
+                    //   lsKey,
+                    //   JSON.stringify({ ...disabledRecord, [title]: !disable })
+                    // );
                   }}
                 >
                   {!disable && <Check className="size-4" />}
