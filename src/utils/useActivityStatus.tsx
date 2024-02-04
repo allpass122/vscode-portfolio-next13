@@ -1,3 +1,5 @@
+"use client";
+
 import { Mail, Pencil } from "lucide-react";
 import { useQueryState, parseAsJson } from "nuqs";
 import { BiCodeAlt } from "react-icons/bi";

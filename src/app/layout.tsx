@@ -6,6 +6,7 @@ import HeaderBar from "./_component/headerBar";
 import "./globals.css";
 import Tab from "./_component/tab";
 import Side from "./_component/side";
+import { Suspense } from "react";
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -31,13 +32,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, "flex min-h-screen flex-col")}>
         <HeaderBar />
-        <div className="flex flex-1 flex-row">
-          <Side />
-          <div className="flex flex-1 flex-col">
-            <Tab />
-            {children}
+        <Suspense>
+          <div className="flex flex-1 flex-row">
+            <Side />
+            <div className="flex flex-1 flex-col">
+              <Tab />
+              {children}
+            </div>
           </div>
-        </div>
+        </Suspense>
         <Footer />
       </body>
     </html>
