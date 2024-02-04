@@ -1,56 +1,32 @@
 "use client";
 
 import { cn } from "@/utils/cn";
-import { Check, CircleUserRound, Mail, Pencil, Settings } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
-import { BiCodeAlt } from "react-icons/bi";
-import { VscFiles, VscGithub } from "react-icons/vsc";
+import { activityItems, lsKey } from "@/utils/useActivityStatus";
 import { Popover } from "@headlessui/react";
-import { useState } from "react";
+import { Check, CircleUserRound, Settings } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { Dispatch, SetStateAction } from "react";
 
-function Sidebar() {
+function Sidebar({
+  disabledRecord,
+  setDisabledRecord,
+}: {
+  disabledRecord: {
+    [key: string]: boolean;
+  };
+  setDisabledRecord: Dispatch<
+    SetStateAction<{
+      [key: string]: boolean;
+    }>
+  >;
+}) {
   const router = useRouter();
   const pathname = usePathname();
-  const lsKey = "s-ac";
-
-  const allItems: { title: string; path: string; icon: React.ReactNode; disabled?: boolean }[] = [
-    {
-      title: "home",
-      path: "/home",
-      icon: <VscFiles className={"size-3/5"} />,
-    },
-    {
-      title: "github",
-      path: "/github",
-      icon: <VscGithub className={"size-3/5 "} />,
-    },
-    {
-      title: "projects",
-      path: "/projects",
-      icon: <BiCodeAlt className={"size-3/5 "} />,
-    },
-    {
-      title: "articles",
-      path: "/articles",
-      icon: <Pencil className={"size-3/5 "} />,
-      disabled: true,
-    },
-    {
-      title: "contact",
-      path: "/contact",
-      icon: <Mail className={"size-3/5 "} />,
-    },
-  ];
-  const localStorageData = localStorage.getItem(lsKey);
-  const [disabledRecord, setDisabledRecord] = useState<{ [key: string]: boolean }>(
-    (localStorageData && JSON.parse(localStorageData)) ??
-      Object.fromEntries(allItems.map((item) => [item.title, item.disabled ?? false]))
-  );
 
   function ActivityBar() {
     return (
       <div className="flex w-full flex-col items-center">
-        {allItems.map(
+        {activityItems.map(
           (item) =>
             !disabledRecord[item.title] && (
               <div
