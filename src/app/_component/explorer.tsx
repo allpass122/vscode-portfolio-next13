@@ -1,32 +1,18 @@
 "use client";
 
 import { cn } from "@/utils/cn";
+import { title2Key, useActBar } from "@/utils/useActivityStatus";
 import { ChevronRight, MoreHorizontal } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useState } from "react";
 import { BiLogoTailwindCss, BiLogoTypescript } from "react-icons/bi";
 import { FaMarkdown, FaReact } from "react-icons/fa";
 import { TbCodeDots } from "react-icons/tb";
 
-function Explorer({
-  disabledRecord,
-  setDisabledRecord,
-}: {
-  disabledRecord: {
-    [key: string]: boolean;
-  };
-  setDisabledRecord: Dispatch<
-    SetStateAction<{
-      [key: string]: boolean;
-    }>
-  >;
-}) {
+function Explorer() {
   const router = useRouter();
   const [open, setOpen] = useState(true);
-
-  useEffect(() => {
-    setDisabledRecord((prev) => prev);
-  }, [disabledRecord]);
+  const [actBar, setActBar] = useActBar();
 
   const allItems: { title: string; path: string; icon: React.ReactNode; label: string }[] = [
     {
@@ -77,7 +63,7 @@ function Explorer({
         <div className="items-left flex flex-col">
           {allItems.map(
             (item) =>
-              !disabledRecord[item.title] && (
+              !!actBar[title2Key(item.title)] && (
                 <div
                   key={item.title}
                   className="flex cursor-pointer flex-row items-center gap-1 rounded-sm px-4 py-1.5 text-sm font-light hover:bg-dark-second"
