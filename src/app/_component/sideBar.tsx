@@ -55,7 +55,7 @@ function Sidebar() {
                 key={item.title}
                 className={cn(
                   "flex aspect-square w-full cursor-pointer flex-col items-center justify-center hover:bg-dark-primary",
-                  item.path.startsWith(pathname) && "border-l-2 border-cyan-400"
+                  item.path.startsWith(pathname) && "border-l-2 border-cyan-400 text-slate-100"
                 )}
                 onClick={() => {
                   router.push(item.path);
@@ -73,7 +73,10 @@ function Sidebar() {
     return (
       <div className="flex w-full flex-col items-center">
         <div
-          className="flex aspect-square w-full cursor-pointer flex-col items-center justify-center hover:bg-dark-primary"
+          className={cn(
+            "flex aspect-square w-full cursor-pointer flex-col items-center justify-center hover:bg-dark-primary",
+            pathname.startsWith("/about") && "text-slate-100"
+          )}
           onClick={() => {
             router.push("/about");
           }}
@@ -92,7 +95,10 @@ function Sidebar() {
               {Object.entries(disabledRecord).map(([title, disable]) => (
                 <div
                   key={title}
-                  className="flex flex-row items-center rounded-md p-1 hover:bg-slate-700 "
+                  className={cn(
+                    "flex flex-row items-center rounded-md p-1 text-slate-100 hover:bg-slate-700",
+                    disable && "text-slate-400"
+                  )}
                   onClick={() => {
                     setDisabledRecord((prev) => ({ ...prev, [title]: !disable }));
                   }}
@@ -109,7 +115,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="between flex w-12 flex-col justify-between bg-dark-second">
+    <div className="between flex w-12 flex-col justify-between bg-dark-second text-slate-400">
       <ActivityBar />
       <SettingComponent />
     </div>
