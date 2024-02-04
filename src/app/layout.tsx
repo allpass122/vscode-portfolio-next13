@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "./_component/footer";
 import HeaderBar from "./_component/headerBar";
+import Sidebar from "./_component/sideBar";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,7 +30,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, "flex min-h-screen flex-col")}>
         <HeaderBar />
-        {children}
+        <div className="flex flex-1 flex-row">
+          <Sidebar />
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
