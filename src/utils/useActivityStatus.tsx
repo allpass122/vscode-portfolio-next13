@@ -24,7 +24,7 @@ export function useActBar() {
 }
 
 export function title2Key(title: string) {
-  return title[0];
+  return title;
 }
 
 export const activityItems: {

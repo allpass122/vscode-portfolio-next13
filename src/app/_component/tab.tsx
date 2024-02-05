@@ -2,7 +2,7 @@
 
 import { title2Key, useActBar } from "@/utils/useActivityStatus";
 import { explorerItems } from "./explorer";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/utils/cn";
 
 // TODO: dnd-toolkit
@@ -10,12 +10,13 @@ function Tab() {
   const router = useRouter();
   const [actBar] = useActBar();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   return (
     <div className="flex h-10 w-full select-none flex-row bg-dark-primary">
       {explorerItems.map(
         (item) =>
-          !!actBar[title2Key(item.title)] && (
+          (item.immutable || !!actBar[title2Key(item.title)]) && (
             <div
               key={item.title}
               className={cn(
@@ -25,7 +26,7 @@ function Tab() {
                   "border-t border-y-amber-400 bg-dark-second "
               )}
               onClick={() => {
-                router.push(item.path);
+                router.push(`${item.path}?${searchParams.toString()}`);
               }}
             >
               {item.icon} {item.label}

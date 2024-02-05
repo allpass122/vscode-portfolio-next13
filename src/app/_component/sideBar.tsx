@@ -4,11 +4,12 @@ import { cn } from "@/utils/cn";
 import { activityItems, title2Key, useActBar } from "@/utils/useActivityStatus";
 import { Popover } from "@headlessui/react";
 import { Check, CircleUserRound, Settings } from "lucide-react";
-import { usePathname, useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation";
 
 function Sidebar() {
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [actBar, setActBar] = useActBar();
 
   function ActivityBar() {
@@ -26,7 +27,7 @@ function Sidebar() {
                     "border-l-2 border-cyan-400 text-slate-100"
                 )}
                 onClick={() => {
-                  router.push(item.path);
+                  router.push(`${item.path}?${searchParams.toString()}`);
                 }}
               >
                 {item.icon}
@@ -46,7 +47,7 @@ function Sidebar() {
             pathname.startsWith("/about") && "text-slate-100"
           )}
           onClick={() => {
-            router.push("/about");
+            router.push(`/about?${searchParams.toString()}`);
           }}
         >
           <CircleUserRound className="size-3/5" />
@@ -61,7 +62,7 @@ function Sidebar() {
           <Popover.Panel className="absolute bottom-10 left-10 z-10 rounded-md border border-white bg-dark-primary">
             <div className="flex flex-col p-2">
               {activityItems.map(({ title }) => {
-                const disable = !actBar[title[0]];
+                const disable = !actBar[title2Key(title)];
                 return (
                   <div
                     key={title}
@@ -70,7 +71,7 @@ function Sidebar() {
                       disable && "text-slate-400"
                     )}
                     onClick={() => {
-                      setActBar((prev) => ({ ...prev, [title[0]]: disable ? 1 : 0 }));
+                      setActBar((prev) => ({ ...prev, [title2Key(title)]: disable ? 1 : 0 }));
                     }}
                   >
                     {!disable && <Check className="size-4" />}

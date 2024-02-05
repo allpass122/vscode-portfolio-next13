@@ -3,10 +3,10 @@
 import { cn } from "@/utils/cn";
 import { title2Key, useActBar } from "@/utils/useActivityStatus";
 import { ChevronRight, MoreHorizontal } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { BiLogoTailwindCss, BiLogoTypescript } from "react-icons/bi";
-import { FaMarkdown, FaReact } from "react-icons/fa";
+import { FaHtml5, FaMarkdown, FaReact } from "react-icons/fa";
 import { TbCodeDots } from "react-icons/tb";
 
 export const explorerItems: {
@@ -14,12 +14,20 @@ export const explorerItems: {
   path: string;
   icon: React.ReactNode;
   label: string;
+  immutable?: boolean;
 }[] = [
   {
     title: "home",
     label: "home.tsx",
     path: "/home",
     icon: <FaReact className="size-4 text-[#00BCD4]" />,
+  },
+  {
+    title: "about",
+    label: "about.html",
+    path: "/about",
+    icon: <FaHtml5 className="size-4 text-red-700" />,
+    immutable: true,
   },
   {
     title: "github",
@@ -50,6 +58,7 @@ export const explorerItems: {
 function Explorer() {
   const router = useRouter();
   const [open, setOpen] = useState(true);
+  const searchParams = useSearchParams();
   const [actBar, setActBar] = useActBar();
 
   return (
@@ -68,12 +77,12 @@ function Explorer() {
         <div className="items-left flex flex-col">
           {explorerItems.map(
             (item) =>
-              !!actBar[title2Key(item.title)] && (
+              (item.immutable || !!actBar[title2Key(item.title)]) && (
                 <div
                   key={item.title}
                   className="flex cursor-pointer flex-row items-center gap-1 rounded-sm px-4 py-1.5 text-sm font-light hover:bg-dark-second"
                   onClick={() => {
-                    router.push(item.path);
+                    router.push(`${item.path}?${searchParams.toString()}`);
                   }}
                 >
                   {item.icon} {item.label}
