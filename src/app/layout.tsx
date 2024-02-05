@@ -5,8 +5,9 @@ import Footer from "./_component/footer";
 import HeaderBar from "./_component/headerBar";
 import "./globals.css";
 import Tab from "./_component/tab";
-import Side from "./_component/side";
 import { Suspense } from "react";
+import { Sidebar } from "lucide-react";
+import Explorer from "./_component/explorer";
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -34,7 +35,8 @@ export default function RootLayout({
         <HeaderBar />
         <Suspense>
           <div className="flex flex-1 flex-row">
-            <Side />
+            <Sidebar />
+            <Explorer />
             <div className="flex flex-1 flex-col">
               <Tab />
               {children}
