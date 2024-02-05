@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function HeaderBar() {
   return (
-    <div className="flex h-8 select-none items-center bg-dark-primary px-2 text-white">
+    <div className="flex h-8 select-none items-center border-b-[0.5px] border-black bg-dark-primary px-2 text-white">
       <Image
         src="/vscode_icon.svg"
         alt="vscode logo"

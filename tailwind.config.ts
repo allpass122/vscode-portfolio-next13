@@ -16,6 +16,7 @@ const config: Config = {
     fontFamily: {
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
+      cmono: ["monospace"],
     },
     extend: {
       backgroundImage: {

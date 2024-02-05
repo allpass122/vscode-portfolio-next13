@@ -39,7 +39,7 @@ function Sidebar() {
 
   function SettingComponent() {
     return (
-      <div className="flex w-full flex-col items-center">
+      <div className="items-cente flex w-full flex-col">
         <div
           className={cn(
             "flex aspect-square w-full cursor-pointer flex-col items-center justify-center hover:bg-dark-primary",
@@ -86,7 +86,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="between flex w-12 select-none flex-col justify-between bg-dark-second text-slate-400">
+    <div className="between flex w-12 select-none flex-col justify-between border-r-[0.5px] border-black bg-dark-second text-slate-400">
       <ActivityBar />
       <SettingComponent />
     </div>

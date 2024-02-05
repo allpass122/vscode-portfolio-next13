@@ -1,13 +1,13 @@
 import { cn } from "@/utils/cn";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
+import Explorer from "./_component/explorer";
 import Footer from "./_component/footer";
 import HeaderBar from "./_component/headerBar";
-import "./globals.css";
+import Sidebar from "./_component/sideBar";
 import Tab from "./_component/tab";
-import { Suspense } from "react";
-import { Sidebar } from "lucide-react";
-import Explorer from "./_component/explorer";
+import "./globals.css";
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
