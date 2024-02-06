@@ -1,0 +1,51 @@
+.nyan-cat-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.nyan-cat {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  animation: moveCat 10s linear infinite;
+}
+.nyan-cat:hover {
+  animation-play-state: paused;
+}
+.rotate {
+  background: url("https://media.tenor.com/rI_0O_9AJ5sAAAAi/nyan-cat-poptart-cat.gif");
+  background-size: cover;
+  animation: spin 1s linear infinite;
+}
+.rotate:hover {
+  animation-play-state: paused;
+}
+@keyframes moveCat {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(calc(100vw - 40px), 0);
+  }
+  50% {
+    transform: translate(calc(100vw - 40px), calc(100vh - 40px));
+  }
+  75% {
+    transform: translate(0, calc(100vh - 40px));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

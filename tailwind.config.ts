@@ -27,6 +27,10 @@ const config: Config = {
         "dark-primary": "#1f2428",
         "dark-second": "#24292e",
       },
+      // https://www.svgrepo.com/show/177857/bat-sports.svg
+      cursor: {
+        bat: "url('/bat.ico'), pointer",
+      },
     },
   },
   plugins: [],

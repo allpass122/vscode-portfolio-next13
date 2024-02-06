@@ -1,5 +1,12 @@
+import NyanCat from "../_component/nyanCat";
+
 function HomePage() {
-  return <div className="">This is home page</div>;
+  return (
+    <div className="">
+      <NyanCat />
+      This is home page
+    </div>
+  );
 }
 
 export default HomePage;
