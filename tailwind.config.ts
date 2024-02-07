@@ -17,6 +17,9 @@ const config: Config = {
       sans: ["Graphik", "sans-serif"],
       serif: ["Merriweather", "serif"],
       cmono: ["monospace"],
+      inter: ["var(--font-inter)"],
+      ps2p: ["var(--press-start-2p)"],
+      tech: ["var(--share-tech-mono)"],
     },
     extend: {
       backgroundImage: {
