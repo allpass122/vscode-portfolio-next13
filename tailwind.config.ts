@@ -50,7 +50,7 @@ const config: Config = {
         typing: "typing 2s steps(20) alternate, blink 1s infinite",
       },
       cursor: {
-        replay: "url('/replay.svg'), pointer",
+        replay: "url('/replay2.svg'), pointer",
       },
     },
   },
