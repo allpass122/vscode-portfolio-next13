@@ -30,6 +30,28 @@ const config: Config = {
         "dark-primary": "#1f2428",
         "dark-second": "#24292e",
       },
+      keyframes: {
+        typing: {
+          "0%": {
+            width: "0%",
+            visibility: "hidden",
+          },
+          "100%": {
+            width: "100%",
+          },
+        },
+        blink: {
+          "50%": {
+            borderColor: "transparent",
+          },
+        },
+      },
+      animation: {
+        typing: "typing 2s steps(20) alternate, blink 1s infinite",
+      },
+      cursor: {
+        replay: "url('/replay.svg'), pointer",
+      },
     },
   },
   plugins: [],

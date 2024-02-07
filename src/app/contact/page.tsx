@@ -52,9 +52,16 @@ function ContactPage() {
 
   return (
     <div className="font-tech flex-1 bg-dark-second p-8">
-      <div className="w-fit bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-2xl font-bold text-transparent">
-        Reach Out Via Socials
+      <div className="cursor-replay w-fit select-none">
+        <div
+          className="animate-typing w-fit overflow-hidden whitespace-pre border-r-2
+         border-r-sky-400 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text 
+         pr-2 text-2xl font-bold text-transparent active:animate-none"
+        >
+          Reach Out Via Socials
+        </div>
       </div>
+
       <CodeStyleBlock />
     </div>
   );
