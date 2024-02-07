@@ -50,7 +50,7 @@ export default function RootLayout({
           inter.variable,
           stm.variable,
           ps2p.variable,
-          "flex h-screen w-screen flex-col"
+          "font-inter flex h-screen w-screen flex-col"
         )}
       >
         <HeaderBar />
