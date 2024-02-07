@@ -51,7 +51,7 @@ function ContactPage() {
   }
 
   return (
-    <div className="font-tech bg-dark-second p-8">
+    <div className="font-tech flex-1 bg-dark-second p-8">
       <div className="w-fit bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-2xl font-bold text-transparent">
         Reach Out Via Socials
       </div>

@@ -46,14 +46,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(inter.variable, stm.variable, ps2p.variable, "flex min-h-screen flex-col")}
+        className={cn(
+          inter.variable,
+          stm.variable,
+          ps2p.variable,
+          "flex h-screen w-screen flex-col"
+        )}
       >
         <HeaderBar />
         <Suspense>
           <div className="flex flex-1 flex-row">
             <Sidebar />
             <Explorer />
-            <div className="flex flex-1 flex-col">
+            <div className="flex flex-1 flex-col overflow-scroll">
               <Tab />
               {children}
             </div>

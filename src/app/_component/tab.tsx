@@ -13,7 +13,7 @@ function Tab() {
   const searchParams = useSearchParams();
 
   return (
-    <div className="flex h-10 w-full select-none flex-row bg-dark-primary">
+    <div className="flex h-10 w-fit min-w-full select-none flex-row bg-dark-primary">
       {explorerItems.map(
         (item) =>
           (item.immutable || !!actBar[title2Key(item.title)]) && (

@@ -87,7 +87,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="between flex w-12 select-none flex-col justify-between border-r-[0.5px] border-black bg-dark-second text-slate-400">
+    <div className="flex w-12 select-none flex-col justify-between border-r-[0.5px] border-black bg-dark-second text-slate-400">
       <ActivityBar />
       <SettingComponent />
     </div>
