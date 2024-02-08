@@ -1,4 +1,12 @@
+"use client";
+
+import { cn } from "@/utils/cn";
+import { useRef } from "react";
+import { useMouse } from "react-use";
+
 function ContactPage() {
+  const ref = useRef(null);
+  const { elX, elY } = useMouse(ref);
   const contactItems = [
     {
       social: "website",
@@ -51,7 +59,18 @@ function ContactPage() {
   }
 
   return (
-    <div className="font-tech flex-1 bg-dark-second p-8">
+    <div
+      ref={ref}
+      style={
+        elX && elY
+          ? {
+              background: `#24292e radial-gradient(50% 50% at ${elX}px ${elY}px
+                , rgba(52, 176, 60, .05), transparent 80%)`,
+            }
+          : undefined
+      }
+      className={cn("font-tech flex-1 p-8")}
+    >
       <div className="cursor-replay w-fit select-none">
         <div
           className="animate-typing w-fit overflow-hidden whitespace-pre border-r-2
