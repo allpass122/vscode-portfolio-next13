@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -54,6 +55,29 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities, addVariant }) {
+      addUtilities({
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        ".hide-scrollbar": {
+          /* Firefox */
+          "scrollbar-width": "none",
+          /* IE 10+ */
+          "-ms-overflow-style": "none",
+          /* Safari and Chrome */
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+        },
+        ".min-h-screen": {
+          /* Use 100dvh if supported */
+          /* https://caniuse.com/mdn-css_types_length_viewport_percentage_units_dynamic */
+          minHeight: "100dvh",
+        },
+      });
+      /* When on pointer device (desktop) */
+      addVariant("not-hover", "@media (hover: hover) and (pointer: fine)");
+    }),
+  ],
 };
 export default config;

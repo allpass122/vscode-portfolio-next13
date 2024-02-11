@@ -27,8 +27,3 @@ body {
     text-wrap: balance;
   }
 }
-
-*:focus-visible {
-  outline: 0px;
-  border-radius: 0px;
-}
