@@ -4,7 +4,7 @@ import { cn } from "@/utils/cn";
 import { activityItems, title2Key, useActBar } from "@/utils/useActivityStatus";
 import { Popover } from "@headlessui/react";
 import { Check, CircleUserRound, Settings } from "lucide-react";
-import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 function Sidebar() {
   const router = useRouter();

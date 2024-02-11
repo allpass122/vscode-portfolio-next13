@@ -2,12 +2,12 @@ import { cn } from "@/utils/cn";
 import type { Metadata } from "next";
 import { Inter, Share_Tech_Mono, Press_Start_2P } from "next/font/google";
 import { Suspense } from "react";
-import Explorer from "./_component/explorer";
-import Footer from "./_component/footer";
-import HeaderBar from "./_component/headerBar";
-import Sidebar from "./_component/sideBar";
-import Tab from "./_component/tab";
-import "./globals.css";
+import Explorer from "@/app/_component/explorer";
+import Footer from "@/app/_component/footer";
+import HeaderBar from "@/app/_component/headerBar";
+import Sidebar from "@/app/_component/sideBar";
+import Tab from "@/app/_component/tab";
+import "@/app/globals.css";
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],

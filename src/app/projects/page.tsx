@@ -1,8 +1,8 @@
 "use client";
 
 import { InfoIcon } from "lucide-react";
-import SkillChip from "../_component/skillChip";
-import { ChipSet } from "../_component/skillChip";
+import SkillChip from "@/app/_component/skillChip";
+import { ChipSet } from "@/app/_component/skillChip";
 import { useState } from "react";
 
 export type Project = {
