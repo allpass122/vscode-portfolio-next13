@@ -67,7 +67,7 @@ function ContactPage() {
               background: `#24292e radial-gradient(50% 50% at ${elX}px ${elY}px
                 , rgba(52, 176, 60, .05), transparent 80%)`,
             }
-          : undefined
+          : { background: "#24292e" }
       }
       className={cn("font-tech flex-1 p-8")}
     >
