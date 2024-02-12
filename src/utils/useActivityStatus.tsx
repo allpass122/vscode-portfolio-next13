@@ -3,6 +3,7 @@
 import { Mail, Pencil } from "lucide-react";
 import { useQueryState, parseAsJson } from "nuqs";
 import { BiCodeAlt } from "react-icons/bi";
+import { SiLeetcode } from "react-icons/si";
 import { VscFiles, VscGithub } from "react-icons/vsc";
 
 export const lsKey = "s-ac";
@@ -58,5 +59,10 @@ export const activityItems: {
     title: "contact",
     path: "/contact",
     icon: <Mail className={"size-3/5 "} />,
+  },
+  {
+    title: "leetcode",
+    path: "/leetcode",
+    icon: <SiLeetcode className={"size-3/5 "} />,
   },
 ];

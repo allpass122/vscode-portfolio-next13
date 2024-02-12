@@ -7,6 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { BiLogoTailwindCss, BiLogoTypescript } from "react-icons/bi";
 import { FaHtml5, FaMarkdown, FaReact } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 import { TbCodeDots } from "react-icons/tb";
 
 export const explorerItems: {
@@ -52,6 +53,12 @@ export const explorerItems: {
     label: "contact.css",
     path: "/contact",
     icon: <BiLogoTailwindCss className="size-4 text-cyan-500" />,
+  },
+  {
+    title: "leetcode",
+    label: "leetcode.cpp",
+    path: "/leetcode",
+    icon: <SiLeetcode className="size-4 text-orange-500" />,
   },
 ];
 
