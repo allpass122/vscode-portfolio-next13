@@ -13,10 +13,11 @@
   "parserOptions": {
     "ecmaVersion": "latest"
   },
+  "no-restricted-imports": ["error"],
   "plugins": ["@typescript-eslint", "react"],
   "rules": {
+    "@typescript-eslint/consistent-type-imports": "warn",
     "react/react-in-jsx-scope": "off",
-    "indent": ["error", 2],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "double"],
     "semi": ["error", "always"],

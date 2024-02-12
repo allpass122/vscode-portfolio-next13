@@ -2,13 +2,14 @@ import Image from "next/image";
 import { LeetCode } from "leetcode-query";
 import { SiLeetcode } from "react-icons/si";
 import ProgressCircle from "@/app/leetcode/_component/progressCircle";
+import SolvedProblemCircle from "@/app/leetcode/_component/solvedProblemCircle";
 
 type LanguageProblemCount = {
   languageName: string;
   problemsSolved: number;
 }[];
 
-type QuestionsCount = {
+export type QuestionsCount = {
   All: number;
   Easy: number;
   Medium: number;
@@ -24,7 +25,7 @@ async function LeetcodePage() {
     problemsSolvedBeatsStats,
   } = await getData();
   return (
-    <div className="font-cmono flex grow flex-col bg-dark-second p-8">
+    <div className="flex grow flex-col bg-dark-second p-8 font-cmono">
       <div className="flex flex-row flex-wrap gap-2">
         <div className="rounded-lg bg-dark-primary p-4">
           <div className="flex flex-row items-center gap-2 text-xl">
@@ -69,19 +70,10 @@ async function LeetcodePage() {
         <div className="flex h-fit grow flex-col rounded-lg bg-dark-primary p-4">
           <span className="mb-8 text-xl text-white">Solved Problems</span>
           <div className="flex flex-row">
-            <div className="relative select-none">
-              <div className="absolute">
-                <div className="flex size-32 flex-col items-center justify-center">
-                  <span className="text-2xl font-bold">{acSubmissionNum.All}</span>
-                  <span className="text-base text-gray-400">solved</span>
-                </div>
-              </div>
-              <div className="flex size-32 flex-col items-center justify-center">
-                <ProgressCircle
-                  percentage={+((acSubmissionNum.All * 100) / allQuestionsCount.All).toFixed(1)}
-                />
-              </div>
-            </div>
+            <SolvedProblemCircle
+              allQuestionsCount={allQuestionsCount}
+              acSubmissionNum={acSubmissionNum}
+            />
           </div>
         </div>
       </div>
