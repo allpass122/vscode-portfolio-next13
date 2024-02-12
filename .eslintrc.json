@@ -13,9 +13,9 @@
   "parserOptions": {
     "ecmaVersion": "latest"
   },
-  "no-restricted-imports": ["error"],
   "plugins": ["@typescript-eslint", "react"],
   "rules": {
+    "no-restricted-imports": ["error"],
     "@typescript-eslint/consistent-type-imports": "warn",
     "react/react-in-jsx-scope": "off",
     "linebreak-style": ["error", "unix"],

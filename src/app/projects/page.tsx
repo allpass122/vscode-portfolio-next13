@@ -2,7 +2,7 @@
 
 import { InfoIcon } from "lucide-react";
 import SkillChip from "@/app/_component/skillChip";
-import { ChipSet } from "@/app/_component/skillChip";
+import type { ChipSet } from "@/app/_component/skillChip";
 import { useState } from "react";
 
 export type Project = {
@@ -65,11 +65,11 @@ function ProjectPage() {
             />
           )}
           {hover === project.title && (
-            <div className="font-inter absolute right-8 top-[-2rem] z-20 text-pretty rounded border border-yellow-400 bg-dark-primary p-2 ">
+            <div className="absolute right-8 top-[-2rem] z-20 text-pretty rounded border border-yellow-400 bg-dark-primary p-2 font-inter ">
               {project.teamProjectParticipation}
             </div>
           )}
-          <div className="font-cmono mb-2 gap-2 rounded text-xl font-bold text-yellow-400">
+          <div className="mb-2 gap-2 rounded font-cmono text-xl font-bold text-yellow-400">
             {project.title}
           </div>
           <div className="text-basic text-yellow-200">{project.description}</div>
@@ -107,9 +107,9 @@ function ProjectPage() {
   }
 
   return (
-    <div className="font-tech flex-1 bg-dark-second p-8">
-      <div className="hide-scrollbar h-[80vh] overflow-scroll">
-        <div className="font-cmono select-none text-3xl font-bold text-sky-500">
+    <div className="flex-1 bg-dark-second p-8 font-tech">
+      <div className="h-[80vh] overflow-scroll hide-scrollbar">
+        <div className="select-none font-cmono text-3xl font-bold text-sky-500">
           My Project List
         </div>
         <div className="flex flex-wrap items-center whitespace-pre">

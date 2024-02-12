@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { LeetCode } from "leetcode-query";
 import { SiLeetcode } from "react-icons/si";
-import ProgressCircle from "@/app/leetcode/_component/progressCircle";
 import SolvedProblemCircle from "@/app/leetcode/_component/solvedProblemCircle";
 
 type LanguageProblemCount = {
@@ -68,8 +67,8 @@ async function LeetcodePage() {
           </div>
         </div>
         <div className="flex h-fit grow flex-col rounded-lg bg-dark-primary p-4">
-          <span className="mb-8 text-xl text-white">Solved Problems</span>
-          <div className="flex flex-row">
+          <span className="mb-4 text-xl text-white">Solved Problems</span>
+          <div className="flex flex-row items-center">
             <SolvedProblemCircle
               allQuestionsCount={allQuestionsCount}
               acSubmissionNum={acSubmissionNum}
