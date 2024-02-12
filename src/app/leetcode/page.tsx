@@ -74,6 +74,78 @@ async function LeetcodePage() {
               allQuestionsCount={allQuestionsCount}
               acSubmissionNum={acSubmissionNum}
             />
+            <div className="m-4 flex w-full flex-col">
+              <div className="mb-4">
+                <div className="flex flex-row justify-between">
+                  <span className="mr-8 whitespace-pre text-base text-gray-200">
+                    {"Easy  "}
+                    <span>
+                      <span className="text-lg text-white">{acSubmissionNum.Easy}</span>
+                      <span className="text-sm text-gray-500">{`/${allQuestionsCount.Easy}`}</span>
+                    </span>
+                  </span>
+                  <span className="whitespace-pre text-sm text-gray-500">
+                    beats
+                    <span className="text-lg text-white">{` ${problemsSolvedBeatsStats.Easy} `}</span>
+                    %
+                  </span>
+                </div>
+                <div className="relative h-2 w-full rounded-full bg-[#2cbb5d]/40">
+                  <div
+                    className="absolute z-10 h-2 rounded-full bg-[#2cbb5d]"
+                    style={{ width: `${(acSubmissionNum.Easy * 100) / allQuestionsCount.Easy}%` }}
+                  />
+                </div>
+              </div>
+              <div className="mb-4">
+                <div className="flex flex-row justify-between">
+                  <span className="mr-8 whitespace-pre text-base text-gray-200">
+                    {"Medium  "}
+                    <span>
+                      <span className="text-lg text-white">{acSubmissionNum.Medium}</span>
+                      <span className="text-sm text-gray-500">{`/${allQuestionsCount.Medium}`}</span>
+                    </span>
+                  </span>
+                  <span className="whitespace-pre text-sm text-gray-500">
+                    beats
+                    <span className="text-lg text-white">{` ${problemsSolvedBeatsStats.Medium} `}</span>
+                    %
+                  </span>
+                </div>
+                <div className="relative h-2 w-full rounded-full bg-[#ffc01e]/40">
+                  <div
+                    className="absolute z-10 h-2 rounded-full bg-[#ffc01e]"
+                    style={{
+                      width: `${(acSubmissionNum.Medium * 100) / allQuestionsCount.Medium}%`,
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="mb-4">
+                <div className="flex flex-row justify-between">
+                  <span className="mr-8 whitespace-pre text-base text-gray-200">
+                    {"Hard  "}
+                    <span>
+                      <span className="text-lg text-white">{acSubmissionNum.Hard}</span>
+                      <span className="text-sm text-gray-500">{`/${allQuestionsCount.Hard}`}</span>
+                    </span>
+                  </span>
+                  <span className="whitespace-pre text-sm text-gray-500">
+                    beats
+                    <span className="text-lg text-white">{` ${problemsSolvedBeatsStats.Hard} `}</span>
+                    %
+                  </span>
+                </div>
+                <div className="relative h-2 w-full rounded-full bg-[#ef4743]/40">
+                  <div
+                    className="absolute z-10 h-2 rounded-full bg-[#ef4743]"
+                    style={{
+                      width: `${(acSubmissionNum.Hard * 100) / allQuestionsCount.Hard}%`,
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -148,7 +220,7 @@ async function getData() {
     return acc;
   }, {} as QuestionsCount);
   const problemsSolvedBeatsStats = (
-    userProblemsSolved.data.matchedUser.submitStatsGlobal.acSubmissionNum as {
+    userProblemsSolved.data.matchedUser.problemsSolvedBeatsStats as {
       difficulty: string;
       percentage: number;
     }[]
@@ -156,7 +228,6 @@ async function getData() {
     acc[difficulty as keyof QuestionsCount] = percentage;
     return acc;
   }, {} as QuestionsCount);
-
   return {
     languageProblemCount,
     matchedUser,

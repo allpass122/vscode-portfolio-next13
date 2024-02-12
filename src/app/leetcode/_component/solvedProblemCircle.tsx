@@ -15,19 +15,17 @@ function SolvedProblemCircle({
   const percentage = +((acSubmissionNum.All * 100) / allQuestionsCount.All).toFixed(1);
   return (
     <div
-      className="relative select-none"
+      className="relative m-4"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       <div className="absolute">
         <div className="flex size-32 flex-col items-center justify-center">
           {hovered ? (
-            <>
-              <span className="text-2xl font-bold">
-                {Math.floor(percentage)}
-                <span className="text-base">{`.${percentage - Math.floor(percentage)}%`}</span>
-              </span>
-            </>
+            <span className="text-2xl font-bold">
+              {Math.floor(percentage)}
+              <span className="text-base">{`.${percentage - Math.floor(percentage)}%`}</span>
+            </span>
           ) : (
             <span className="text-2xl font-bold">{acSubmissionNum.All}</span>
           )}
