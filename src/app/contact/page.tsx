@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/utils/cn";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { useMouse } from "react-use";
 
 function ContactPage() {
@@ -57,6 +57,7 @@ function ContactPage() {
       </div>
     );
   }
+  const MemoizedCodeStyleBlock = useMemo(() => CodeStyleBlock, []);
 
   return (
     <div
@@ -69,11 +70,11 @@ function ContactPage() {
             }
           : { background: "#24292e" }
       }
-      className={cn("font-tech flex-1 p-8")}
+      className={cn("flex-1 p-8 font-tech")}
     >
-      <div className="cursor-replay w-fit select-none">
+      <div className="w-fit cursor-replay select-none">
         <div
-          className="animate-typing w-fit overflow-hidden whitespace-pre border-r-2
+          className="w-fit animate-typing overflow-hidden whitespace-pre border-r-2
          border-r-sky-400 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text 
          pr-2 text-4xl text-transparent active:animate-none"
         >
@@ -81,7 +82,7 @@ function ContactPage() {
         </div>
       </div>
       <div className="font-cmono">{"hint: click above title or select above code :>"}</div>
-      <CodeStyleBlock />
+      <MemoizedCodeStyleBlock />
     </div>
   );
 }
