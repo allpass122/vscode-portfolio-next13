@@ -17,7 +17,7 @@ async function GithubPage() {
             />
           </div>
           <a
-            className="font-inter text-gray-400 "
+            className="font-inter text-white"
             href={"https://github.com/dempsey1229"}
             target="_blank"
             rel="noreferrer"
@@ -39,35 +39,6 @@ async function GithubPage() {
 }
 
 async function getData() {
-  // const requestBody = {
-  //   query: `query($userName:String!) {
-  //     user(login: $userName){
-  //       contributionsCollection {
-  //         contributionCalendar {
-  //           totalContributions
-  //           weeks {
-  //             contributionDays {
-  //               contributionCount
-  //               date
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }`,
-  //   variables: { userName: process.env.NEXT_PUBLIC_GITHUB_USERNAME },
-  // };
-
-  // const calendarRes = await fetch("https://api.github.com/graphql", {
-  //   method: "POST",
-  //   headers: {
-  //     Authorization: `token ${process.env.GITHUB_API_KEY}`,
-  //   },
-  //   body: JSON.stringify(requestBody),
-  // });
-  // const calendar = await calendarRes.json();
-  // console.log(calendar.data.user.contributionsCollection);
-
   const userRes = await fetch(
     `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`,
     {
@@ -80,10 +51,7 @@ async function getData() {
     throw new Error("Failed to fetch data");
   }
   const user = await userRes.json();
-  // console.log(user);
-  return {
-    user,
-  };
+  return { user };
 }
 
 export default GithubPage;
