@@ -14,7 +14,7 @@ function HomePage() {
           "flip-in-ver-right"
         )}
       >
-        <span className="whitespace-pre-line text-xl text-gray-700">{text}</span>
+        <span className="text-balance break-normal text-xl text-gray-700">{text}</span>
       </div>
     );
   }
