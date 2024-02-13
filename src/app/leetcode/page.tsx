@@ -42,7 +42,7 @@ async function LeetcodePage() {
           </div>
           <a
             className="font-inter text-white"
-            href={"https://leetcode.com/b06902122/"}
+            href={`https://leetcode.com/${process.env.NEXT_PUBLIC_LEETCODE_USERNAME}/`}
             target="_blank"
             rel="noreferrer"
           >

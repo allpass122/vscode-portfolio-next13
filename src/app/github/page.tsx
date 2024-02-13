@@ -18,14 +18,14 @@ async function GithubPage() {
           </div>
           <a
             className="font-inter text-white"
-            href={"https://github.com/dempsey1229"}
+            href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
             target="_blank"
             rel="noreferrer"
           >
             {user.login}
           </a>
         </div>
-        <div className="font-inter flex items-center rounded-lg bg-dark-primary p-4">
+        <div className="flex items-center rounded-lg bg-dark-primary p-4 font-inter">
           <GithubCalendar
             username={process.env.NEXT_PUBLIC_GITHUB_USERNAME as string}
             user={user}
