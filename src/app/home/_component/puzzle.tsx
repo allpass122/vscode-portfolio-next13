@@ -76,6 +76,7 @@ function Puzzle() {
           Puzzle <span className="text-orange-400">Playgorund</span>
         </span>
         <Image
+          rel="preload"
           className="text-right"
           src="/dnd-kit-logo.svg"
           width={91}

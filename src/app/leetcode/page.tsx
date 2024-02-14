@@ -33,6 +33,7 @@ async function LeetcodePage() {
           <div className="my-0.5 h-[1px] w-full bg-white" />
           <div className="flex justify-center">
             <Image
+              rel="preload"
               className="my-4 rounded-full"
               src={matchedUser?.profile.userAvatar || ""}
               width={160}

@@ -9,6 +9,7 @@ async function GithubPage() {
         <div className="rounded-lg bg-dark-primary p-4">
           <div>
             <Image
+              rel="preload"
               className="my-4 rounded-full"
               src={user.avatar_url}
               width={160}
