@@ -51,7 +51,7 @@ function Puzzle() {
       setActiveItem(null);
       return;
     }
-    if (!(over && active.id !== over?.id)) {
+    if (!(over && active.id !== over?.id) || words.length >= 8) {
       setActiveItem(null);
       return;
     }
