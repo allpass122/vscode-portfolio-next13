@@ -34,7 +34,7 @@ function WordItem({ word }: { word: Word }) {
       {...attributes}
       {...listeners}
       className={cn(
-        "flex size-4 cursor-pointer select-none items-center justify-center bg-orange-400",
+        "flex size-16 cursor-pointer select-none items-center justify-center rounded-2xl bg-orange-400 text-3xl text-black",
         isDragging && "z-10"
       )}
     >

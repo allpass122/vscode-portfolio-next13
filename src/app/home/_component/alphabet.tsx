@@ -16,7 +16,7 @@ function Alphabet({ word }: { word: Word }) {
   return (
     <div
       style={style}
-      className=" flex size-4 cursor-pointer select-none items-center justify-center bg-sky-400"
+      className=" flex size-16 cursor-pointer select-none items-center justify-center rounded-2xl bg-sky-400 text-3xl text-black"
       ref={setNodeRef}
       {...attributes}
       {...listeners}
