@@ -1,4 +1,5 @@
 import { cn } from "@/utils/cn";
+import Puzzle from "@/app/home/_component/puzzle";
 
 /* eslint-disable quotes */
 function HomePage() {
@@ -45,6 +46,7 @@ function HomePage() {
           />
         </div>
       </div>
+      <Puzzle />
     </div>
   );
 }
