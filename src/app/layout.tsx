@@ -8,6 +8,7 @@ import HeaderBar from "@/app/_component/headerBar";
 import Sidebar from "@/app/_component/sideBar";
 import Tab from "@/app/_component/tab";
 import "@/app/globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -50,9 +51,10 @@ export default function RootLayout({
           inter.variable,
           stm.variable,
           ps2p.variable,
-          "font-inter flex h-screen w-screen flex-col"
+          "flex h-screen w-screen flex-col font-inter"
         )}
       >
+        <SpeedInsights />
         <HeaderBar />
         <Suspense>
           <div className="flex flex-1 flex-row">
