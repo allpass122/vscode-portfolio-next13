@@ -37,6 +37,10 @@ function GithubCalendar({ username, user }: { username: string; user: any }) {
         </Listbox>
       </div>
       <GitHubCalendar
+        theme={{
+          light: ["#161B22", "#0E4429", "#116D32", "#26A641", "#3AD354"],
+          dark: ["#161B22", "#0E4429", "#116D32", "#26A641", "#3AD354"],
+        }}
         username={username}
         year={year}
       />
