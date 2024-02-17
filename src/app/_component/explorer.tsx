@@ -1,7 +1,7 @@
 "use client";
 
+import { useActivityStore } from "@/providers/activityProviders";
 import { cn } from "@/utils/cn";
-import { title2Key, useActBar } from "@/utils/useActivityStatus";
 import { ChevronRight, MoreHorizontal } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
@@ -66,7 +66,7 @@ function Explorer() {
   const router = useRouter();
   const [open, setOpen] = useState(true);
   const searchParams = useSearchParams();
-  const [actBar, setActBar] = useActBar();
+  const { list } = useActivityStore((state) => state);
 
   return (
     <div className="flex w-[150px] select-none flex-col border-r-[0.5px] border-black bg-dark-primary text-slate-200">
@@ -84,7 +84,8 @@ function Explorer() {
         <div className="items-left flex flex-col">
           {explorerItems.map(
             (item) =>
-              (item.immutable || !!actBar[title2Key(item.title)]) && (
+              (item.immutable ||
+                list.filter((l) => l.name === item.title && l.disabled === false).length > 0) && (
                 <div
                   key={item.title}
                   className="flex cursor-pointer flex-row items-center gap-1 rounded-sm px-4 py-1.5 text-sm font-light hover:bg-dark-second"

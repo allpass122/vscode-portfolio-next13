@@ -1,14 +1,14 @@
 "use client";
 
-import { title2Key, useActBar } from "@/utils/useActivityStatus";
 import { explorerItems } from "./explorer";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/utils/cn";
+import { useActivityStore } from "@/providers/activityProviders";
 
 // TODO: dnd-toolkit
 function Tab() {
   const router = useRouter();
-  const [actBar] = useActBar();
+  const { list } = useActivityStore((state) => state);
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -16,7 +16,8 @@ function Tab() {
     <div className="flex h-10 w-fit min-w-full select-none flex-row bg-dark-primary">
       {explorerItems.map(
         (item) =>
-          (item.immutable || !!actBar[title2Key(item.title)]) && (
+          (item.immutable ||
+            list.filter((l) => l.name === item.title && l.disabled === false).length > 0) && (
             <div
               key={item.title}
               className={cn(

@@ -1,7 +1,8 @@
 "use client";
 
+import { useActivityStore } from "@/providers/activityProviders";
 import { cn } from "@/utils/cn";
-import { activityItems, title2Key, useActBar } from "@/utils/useActivityStatus";
+import { activityItems } from "@/utils/useActivityStatus";
 import { Popover } from "@headlessui/react";
 import { Check, CircleUserRound, Settings } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -10,14 +11,14 @@ function Sidebar() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [actBar, setActBar] = useActBar();
+  const { list, setDisabled } = useActivityStore((state) => state);
 
   function ActivityBar() {
     return (
       <div className="flex w-full flex-col items-center">
         {activityItems.map(
           (item) =>
-            !!actBar[title2Key(item.title)] && (
+            list.filter((l) => l.name === item.title && l.disabled === false).length > 0 && (
               <div
                 key={item.title}
                 className={cn(
@@ -62,7 +63,8 @@ function Sidebar() {
           <Popover.Panel className="absolute bottom-10 left-10 z-10 rounded-md border border-white bg-dark-primary">
             <div className="flex flex-col p-2">
               {activityItems.map(({ title }) => {
-                const disable = !actBar[title2Key(title)];
+                const disable =
+                  list.filter((l) => l.name === title && l.disabled === true).length > 0;
                 return (
                   <div
                     key={title}
@@ -71,7 +73,7 @@ function Sidebar() {
                       disable && "text-slate-400"
                     )}
                     onClick={() => {
-                      setActBar((prev) => ({ ...prev, [title2Key(title)]: disable ? 1 : 0 }));
+                      setDisabled(title, !disable);
                     }}
                   >
                     {!disable && <Check className="size-4" />}

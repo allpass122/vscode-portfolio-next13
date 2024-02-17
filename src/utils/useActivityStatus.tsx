@@ -1,32 +1,9 @@
 "use client";
 
 import { Mail, Pencil } from "lucide-react";
-import { useQueryState, parseAsJson } from "nuqs";
 import { BiCodeAlt } from "react-icons/bi";
 import { SiLeetcode } from "react-icons/si";
 import { VscFiles, VscGithub } from "react-icons/vsc";
-
-export const lsKey = "s-ac";
-
-export type ActBar = {
-  [key: string]: 0 | 1;
-};
-
-export function useActBar() {
-  const r = useQueryState(
-    "act",
-    parseAsJson<ActBar>().withDefault(
-      Object.fromEntries(
-        activityItems.map((item) => [title2Key(item.title), item.disabled ? 0 : 1])
-      )
-    )
-  );
-  return r;
-}
-
-export function title2Key(title: string) {
-  return title;
-}
 
 export const activityItems: {
   title: string;

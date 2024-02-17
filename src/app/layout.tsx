@@ -9,6 +9,7 @@ import Sidebar from "@/app/_component/sideBar";
 import Tab from "@/app/_component/tab";
 import "@/app/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ActivityStoreProvider } from "@/providers/activityProviders";
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -54,19 +55,21 @@ export default function RootLayout({
           "flex h-screen w-screen flex-col font-inter"
         )}
       >
-        <SpeedInsights />
-        <HeaderBar />
-        <Suspense>
-          <div className="flex flex-1 flex-row">
-            <Sidebar />
-            <Explorer />
-            <div className="flex flex-1 flex-col overflow-scroll text-white">
-              <Tab />
-              {children}
+        <ActivityStoreProvider>
+          <SpeedInsights />
+          <HeaderBar />
+          <Suspense>
+            <div className="flex flex-1 flex-row">
+              <Sidebar />
+              <Explorer />
+              <div className="flex flex-1 flex-col overflow-scroll text-white">
+                <Tab />
+                {children}
+              </div>
             </div>
-          </div>
-        </Suspense>
-        <Footer />
+          </Suspense>
+          <Footer />
+        </ActivityStoreProvider>
       </body>
     </html>
   );
