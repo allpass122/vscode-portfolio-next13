@@ -1,4 +1,5 @@
 import { createStore } from "zustand/vanilla";
+import { persist } from "zustand/middleware";
 
 export type ActivityState = {
   list: {
@@ -43,11 +44,18 @@ export const defaultInitState: ActivityState = {
 };
 
 export const createActivityStore = (initState: ActivityState = defaultInitState) => {
-  return createStore<ActivityStore>()((set) => ({
-    ...initState,
-    setDisabled: (name, disabled) =>
-      set((state) => ({
-        list: [...state.list.filter((item) => item.name !== name), { name, disabled }],
-      })),
-  }));
+  return createStore<ActivityStore>()(
+    persist(
+      (set) => ({
+        ...initState,
+        setDisabled: (name, disabled) =>
+          set((state) => ({
+            list: [...state.list.filter((item) => item.name !== name), { name, disabled }],
+          })),
+      }),
+      {
+        name: "activitystore",
+      }
+    )
+  );
 };
