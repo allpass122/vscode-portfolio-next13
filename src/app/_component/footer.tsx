@@ -12,12 +12,12 @@ function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          <div className="flex flex-row items-center gap-1 rounded-sm p-0.5 text-xs hover:bg-slate-400">
+          <div className="hover:bg-primary/40 flex flex-row items-center gap-1 rounded-sm p-0.5 text-xs">
             <IoIosGitBranch className="size-3" />
             main
           </div>
         </a>
-        <div className="flex flex-row items-center gap-2 rounded-sm p-0.5 text-xs hover:bg-slate-400">
+        <div className="hover:bg-primary/40 flex flex-row items-center gap-2 rounded-sm p-0.5 text-xs">
           <div className="flex flex-row items-center gap-1">
             <XCircle className="size-3" />0
           </div>
@@ -32,15 +32,15 @@ function Footer() {
   function ToolBoxComponent() {
     return (
       <div className="flex flex-row items-center gap-3">
-        <div className="flex flex-row items-center gap-1 rounded-sm p-0.5 text-xs hover:bg-slate-400">
+        <div className="hover:bg-primary/40 flex flex-row items-center gap-1 rounded-sm p-0.5 text-xs">
           <TbBrandNextjs className="size-4" />
           Powered by Next.js
         </div>
-        <div className="flex flex-row items-center gap-1 rounded-sm p-0.5 text-xs hover:bg-slate-400">
+        <div className="hover:bg-primary/40 flex flex-row items-center gap-1 rounded-sm p-0.5 text-xs">
           <IoCheckmarkDone className="size-4" />
           Prettier
         </div>
-        <div className="flex flex-row items-center gap-1 rounded-sm p-0.5 text-xs hover:bg-slate-400">
+        <div className="hover:bg-primary/40 flex flex-row items-center gap-1 rounded-sm p-0.5 text-xs">
           <BellDot className="size-4" />
         </div>
       </div>
@@ -48,7 +48,7 @@ function Footer() {
   }
 
   return (
-    <div className="flex h-6 select-none items-center justify-between border-t-[0.5px] border-black bg-dark-primary px-2 text-white">
+    <div className="bg-base-100 border-neutral text-neutral flex h-6 select-none items-center justify-between border-t-[0.5px] px-2">
       <GitBranchComponent />
       <ToolBoxComponent />
     </div>
