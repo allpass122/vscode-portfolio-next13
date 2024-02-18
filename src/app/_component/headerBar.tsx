@@ -7,7 +7,7 @@ function HeaderBar() {
         <div
           tabIndex={0}
           role="button"
-          className="btn btn-xs btn-outline  btn-accent"
+          className="btn btn-xs btn-outline btn-accent"
         >
           Theme
         </div>
@@ -21,7 +21,7 @@ function HeaderBar() {
               name="theme-dropdown"
               className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
               aria-label="Default"
-              value="default"
+              value="mytheme"
             />
           </li>
           <li>
@@ -48,7 +48,7 @@ function HeaderBar() {
   }
 
   return (
-    <div className="border-base-100 bg-base-100 flex h-8 select-none items-center border-b-[0.5px] px-2">
+    <div className="bg-base-100 border-neutral flex h-8 select-none items-center border-b-[0.5px] px-2">
       <Image
         src="/vscode_icon.svg"
         alt="vscode logo"

@@ -22,10 +22,10 @@ function Sidebar() {
               <div
                 key={item.title}
                 className={cn(
-                  "flex aspect-square w-full cursor-pointer flex-col items-center justify-center hover:bg-dark-primary",
+                  "hover:bg-primary/40 flex aspect-square w-full cursor-pointer flex-col items-center justify-center",
                   pathname !== "/" &&
                     item.path.startsWith(pathname) &&
-                    "border-l-2 border-cyan-400 text-slate-100"
+                    "text-primary border-l-2 border-cyan-400"
                 )}
                 onClick={() => {
                   router.push(`${item.path}?${searchParams.toString()}`);
@@ -42,11 +42,10 @@ function Sidebar() {
   function SettingComponent() {
     return (
       <div className="items-cente flex w-full flex-col">
-        {/* <ThemeController /> */}
         <div
           className={cn(
-            "flex aspect-square w-full cursor-pointer flex-col items-center justify-center hover:bg-dark-primary",
-            pathname.startsWith("/about") && "text-slate-100"
+            "hover:bg-primary/40 flex aspect-square w-full cursor-pointer flex-col items-center justify-center",
+            pathname.startsWith("/about") && "text-primary"
           )}
           onClick={() => {
             router.push(`/about?${searchParams.toString()}`);
@@ -56,12 +55,12 @@ function Sidebar() {
         </div>
         <Popover className="relative aspect-square w-full">
           <Popover.Button
-            className="flex aspect-square w-full cursor-pointer flex-col items-center justify-center hover:bg-dark-primary 
+            className="hover:bg-primary/40 flex aspect-square w-full cursor-pointer flex-col items-center justify-center
           focus-visible:border-0 focus-visible:border-none "
           >
             <Settings className={"size-3/5 "} />
           </Popover.Button>
-          <Popover.Panel className="absolute bottom-10 left-10 z-10 rounded-md border border-white bg-dark-primary">
+          <Popover.Panel className="border-neutral bg-base-100 absolute bottom-10 left-10 z-10 rounded-md border">
             <div className="flex flex-col p-2">
               {activityItems.map(({ title }) => {
                 const disable =
@@ -70,7 +69,7 @@ function Sidebar() {
                   <div
                     key={title}
                     className={cn(
-                      "flex cursor-pointer flex-row items-center rounded-md p-1 text-slate-100 hover:bg-slate-700",
+                      "text-primary hover:bg-primary/40 flex cursor-pointer flex-row items-center rounded-md p-1",
                       disable && "text-slate-400"
                     )}
                     onClick={() => {
@@ -90,7 +89,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="flex w-12 select-none flex-col justify-between border-r-[0.5px] border-black bg-dark-second text-slate-400">
+    <div className="bg-base-100 border-neutral text-neutral flex w-12 select-none flex-col justify-between border-r-[0.5px]">
       <ActivityBar />
       <SettingComponent />
     </div>

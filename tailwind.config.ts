@@ -86,10 +86,10 @@ const config: Config = {
     themes: [
       {
         mytheme: {
-          primary: "#1f2428",
-          secondary: "rgb(148 163 184)",
+          primary: "#f4f4f5",
+          secondary: "#24292e",
           accent: "#e879f9",
-          neutral: "#24292e",
+          neutral: "#a3a3a3",
           "base-100": "#1f2428",
         },
       },
