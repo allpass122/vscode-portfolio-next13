@@ -16,7 +16,7 @@ const experiences: Experiences = [
     end: null,
     position: "Full Stack Engineer",
     description: `Build efficient and maintainable products including official website and ERP system.
-      I'm responsable for backend api development, frontend development and database maintenance.
+      I'm responsible for backend api development, frontend development and database maintenance.
       As a member of startup company, I also engage in product feature, page layout discussion including technology stack.`,
   },
   {
