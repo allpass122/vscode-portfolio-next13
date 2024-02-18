@@ -70,7 +70,7 @@ function Puzzle() {
   };
 
   return (
-    <div className="m-2 flex flex-1 flex-col rounded-lg bg-dark-primary p-4 font-cmono">
+    <div className=" border-neutral m-2 flex flex-1 flex-col rounded-lg border p-4 font-cmono">
       <span className="flex w-full flex-row items-center justify-between whitespace-pre text-4xl font-bold">
         <span className="text-sky-400">
           Puzzle <span className="text-orange-400">Playgorund</span>

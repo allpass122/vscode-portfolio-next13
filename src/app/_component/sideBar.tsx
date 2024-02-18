@@ -89,7 +89,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="bg-base-100 border-neutral text-primary/50 flex w-12 select-none flex-col justify-between border-r-[0.5px]">
+    <div className="bg-base-100/90 border-neutral text-primary/50 flex w-12 select-none flex-col justify-between border-r-[0.5px]">
       <ActivityBar />
       <SettingComponent />
     </div>

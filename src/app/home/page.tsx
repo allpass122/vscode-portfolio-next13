@@ -7,7 +7,7 @@ function HomePage() {
     return (
       <div
         className={cn(
-          "size-60 rounded-2xl bg-dark-primary p-4 first-letter:mr-2 first-letter:text-5xl first-letter:font-bold first-letter:uppercase first-letter:text-black",
+          "prose size-60 rounded-2xl bg-dark-primary p-4 first-letter:mr-2 first-letter:text-5xl first-letter:font-bold first-letter:uppercase first-letter:text-black",
           flag === 1 && "bg-red-400",
           flag === 2 && "bg-green-400",
           flag === 3 && "bg-blue-400",
@@ -21,7 +21,7 @@ function HomePage() {
   }
 
   return (
-    <div className="flex flex-1 flex-row bg-dark-second p-8">
+    <div className="bg-base-100 flex flex-1 flex-row p-8">
       <div className="flex size-fit flex-col gap-4 rounded-br-3xl border-b-8 border-r-8 border-orange-800 p-2 font-serif">
         <div className="flex flex-row gap-4">
           <TextBlock
