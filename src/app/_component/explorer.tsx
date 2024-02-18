@@ -88,7 +88,7 @@ function Explorer() {
                 list.filter((l) => l.name === item.title && l.disabled === false).length > 0) && (
                 <div
                   key={item.title}
-                  className="flex cursor-pointer flex-row items-center gap-1 rounded-sm px-4 py-1.5 text-sm font-light hover:bg-dark-second"
+                  className="hover:bg-primary/40 flex cursor-pointer flex-row items-center gap-1 rounded-sm px-4 py-1.5 text-sm font-light"
                   onClick={() => {
                     router.push(`${item.path}?${searchParams.toString()}`);
                   }}

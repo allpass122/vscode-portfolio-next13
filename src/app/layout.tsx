@@ -62,7 +62,7 @@ export default function RootLayout({
             <div className="flex flex-1 flex-row">
               <Sidebar />
               <Explorer />
-              <div className="flex flex-1 flex-col overflow-scroll text-white">
+              <div className="text-primary/50 flex flex-1 flex-col overflow-scroll">
                 <Tab />
                 {children}
               </div>

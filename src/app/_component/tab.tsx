@@ -13,7 +13,7 @@ function Tab() {
   const searchParams = useSearchParams();
 
   return (
-    <div className="flex h-10 w-fit min-w-full select-none flex-row bg-dark-primary">
+    <div className="bg-base-100 flex h-10 w-fit min-w-full select-none flex-row">
       {explorerItems.map(
         (item) =>
           (item.immutable ||
@@ -21,10 +21,10 @@ function Tab() {
             <div
               key={item.title}
               className={cn(
-                "flex cursor-pointer flex-row items-center gap-2 rounded-sm border-r border-black/20 px-4 py-1.5 text-sm font-light",
+                "border-neutral font flex cursor-pointer flex-row items-center gap-2 rounded-sm border-r px-4 py-1.5 text-sm",
                 pathname !== "/" &&
                   item.path.startsWith(pathname) &&
-                  "border-t border-y-amber-400 bg-dark-second "
+                  "border-t-2 border-y-amber-400"
               )}
               onClick={() => {
                 router.push(`${item.path}?${searchParams.toString()}`);
