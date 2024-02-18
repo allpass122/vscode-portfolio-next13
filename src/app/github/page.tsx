@@ -6,7 +6,7 @@ async function GithubPage() {
   return (
     <div className="bg-base-100 flex grow flex-col p-8">
       <div className="flex flex-row flex-wrap gap-2">
-        <div className="rounded-lg bg-dark-primary p-4">
+        <div className="bg-base-200 rounded-lg p-4">
           <div>
             <Image
               rel="preload"
@@ -18,7 +18,7 @@ async function GithubPage() {
             />
           </div>
           <a
-            className="font-inter text-white"
+            className="text-primary font-inter"
             href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
             target="_blank"
             rel="noreferrer"
@@ -26,7 +26,7 @@ async function GithubPage() {
             {user.login}
           </a>
         </div>
-        <div className="flex items-center rounded-lg bg-dark-primary p-4 font-inter">
+        <div className="bg-base-200 flex items-center rounded-lg p-4 font-inter">
           <GithubCalendar
             username={process.env.NEXT_PUBLIC_GITHUB_USERNAME as string}
             user={user}

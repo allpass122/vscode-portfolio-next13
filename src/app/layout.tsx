@@ -10,6 +10,8 @@ import Tab from "@/app/_component/tab";
 import "@/app/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ActivityStoreProvider } from "@/providers/activityProviders";
+import { ThemeStoreProvider } from "@/providers/themeProviders";
+import ThemeWrap from "@/app/_component/themeWrap";
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -56,19 +58,23 @@ export default function RootLayout({
         )}
       >
         <ActivityStoreProvider>
-          <SpeedInsights />
-          <HeaderBar />
-          <Suspense>
-            <div className="flex flex-1 flex-row">
-              <Sidebar />
-              <Explorer />
-              <div className="text-primary/50 flex flex-1 flex-col overflow-scroll">
-                <Tab />
-                {children}
-              </div>
-            </div>
-          </Suspense>
-          <Footer />
+          <ThemeStoreProvider>
+            <ThemeWrap>
+              <SpeedInsights />
+              <HeaderBar />
+              <Suspense>
+                <div className="flex flex-1 flex-row">
+                  <Sidebar />
+                  <Explorer />
+                  <div className="text-primary/50 flex flex-1 flex-col overflow-scroll">
+                    <Tab />
+                    {children}
+                  </div>
+                </div>
+              </Suspense>
+              <Footer />
+            </ThemeWrap>
+          </ThemeStoreProvider>
         </ActivityStoreProvider>
       </body>
     </html>

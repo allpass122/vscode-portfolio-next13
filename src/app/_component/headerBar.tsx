@@ -1,9 +1,23 @@
+"use client";
+
+import { useThemeStore } from "@/providers/themeProviders";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 function HeaderBar() {
+  const { theme, setTheme } = useThemeStore((state) => state);
+  const router = useRouter();
   function ThemeController() {
     return (
-      <div className="dropdown">
+      <div
+        className="dropdown"
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        onChange={(e: any) => {
+          setTheme(e.target.value);
+          // find html element and set theme
+          // document.getElementsByTagName("html")[0].setAttribute("data-theme", theme);
+        }}
+      >
         <div
           tabIndex={0}
           role="button"
