@@ -4,7 +4,7 @@ import GithubCalendar from "@/app/github/_component/githubCalendar";
 async function GithubPage() {
   const { user } = await getData();
   return (
-    <div className="flex grow flex-col bg-dark-second p-8">
+    <div className="bg-base-100 flex grow flex-col p-8">
       <div className="flex flex-row flex-wrap gap-2">
         <div className="rounded-lg bg-dark-primary p-4">
           <div>

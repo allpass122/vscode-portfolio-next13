@@ -1,5 +1,5 @@
 function ArticlesPage() {
-  return <div className="flex flex-1 flex-row bg-dark-second p-8">This is Articles Page.</div>;
+  return <div className="bg-base-100 flex flex-1 flex-row p-8">This is Articles Page.</div>;
 }
 
 export default ArticlesPage;

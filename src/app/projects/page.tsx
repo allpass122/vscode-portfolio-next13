@@ -107,7 +107,7 @@ function ProjectPage() {
   }
 
   return (
-    <div className="flex-1 bg-dark-second p-8 font-tech">
+    <div className="bg-base-100 flex-1 p-8 font-tech">
       <div className="h-[80vh] overflow-scroll hide-scrollbar">
         <div className="select-none font-cmono text-3xl font-bold text-sky-500">
           My Project List

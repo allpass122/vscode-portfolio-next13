@@ -24,7 +24,7 @@ async function LeetcodePage() {
     problemsSolvedBeatsStats,
   } = await getData();
   return (
-    <div className="flex grow flex-col bg-dark-second p-8 font-cmono">
+    <div className="bg-base-100 flex grow flex-col p-8 font-cmono">
       <div className="flex flex-row flex-wrap gap-2">
         <div className="rounded-lg bg-dark-primary p-4">
           <div className="flex flex-row items-center gap-2 text-xl">
@@ -56,7 +56,7 @@ async function LeetcodePage() {
                 key={languageName}
                 className="my-2 flex h-4 flex-row items-end justify-between"
               >
-                <div className="mr-4 h-6 min-w-8 rounded-xl border border-amber-400 bg-dark-second px-2 py-1 text-center text-xs text-amber-400">
+                <div className="bg-base-100 mr-4 h-6 min-w-8 rounded-xl border border-amber-400 px-2 py-1 text-center text-xs text-amber-400">
                   {languageName}
                 </div>
                 <div className="flex flex-row items-center">

@@ -7,7 +7,7 @@ function HomePage() {
     return (
       <div
         className={cn(
-          "prose size-60 rounded-2xl bg-dark-primary p-4 first-letter:mr-2 first-letter:text-5xl first-letter:font-bold first-letter:uppercase first-letter:text-black",
+          "prose size-60 rounded-2xl p-4 first-letter:mr-2 first-letter:text-5xl first-letter:font-bold first-letter:uppercase first-letter:text-black",
           flag === 1 && "bg-red-400",
           flag === 2 && "bg-green-400",
           flag === 3 && "bg-blue-400",

@@ -58,11 +58,11 @@ function AboutPage() {
             className="m-2 flex cursor-pointer flex-row flex-wrap content-center gap-4 rounded-lg border border-transparent p-2
               hover:bg-white hover:bg-opacity-5 hover:!opacity-100 group-hover/list:opacity-50"
           >
-            <div className="w-40 text-left text-sm text-violet-300">{`${timeFormatted(experience.start)} - ${timeFormatted(experience.end)}`}</div>
+            <div className="w-40 text-left text-sm text-violet-400">{`${timeFormatted(experience.start)} - ${timeFormatted(experience.end)}`}</div>
             <div className="flex w-80 flex-col">
-              <span className="text-left text-lg text-violet-400">{`${experience.position}`}</span>
-              <span className="text-violet-400">{`@${experience.enterprise}`}</span>
-              <span className="my-1 whitespace-pre-line text-balance text-sm text-violet-100">{`${experience.description}`}</span>
+              <span className="text-left text-lg text-violet-600">{`${experience.position}`}</span>
+              <span className="text-violet-600">{`@${experience.enterprise}`}</span>
+              <span className="my-1 whitespace-pre-line text-balance text-sm text-violet-300">{`${experience.description}`}</span>
             </div>
           </li>
         ))}
@@ -71,8 +71,8 @@ function AboutPage() {
   }
 
   return (
-    <div className="flex grow flex-col bg-dark-second p-8">
-      <div className="flex w-fit grow flex-col justify-between rounded-lg bg-dark-primary p-4">
+    <div className="bg-base-100 flex grow flex-col p-8">
+      <div className="bg-base-200 flex w-fit grow flex-col justify-between rounded-lg p-4">
         <span className="font-tech text-2xl text-sky-600">{"<experience>"}</span>
         <Experience />
         <span className="font-tech text-2xl text-sky-600">{"</experience>"}</span>
