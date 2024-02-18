@@ -57,6 +57,8 @@ const config: Config = {
     },
   },
   plugins: [
+    require("@tailwindcss/typography"),
+    require("daisyui"),
     plugin(function ({ addUtilities, addVariant }) {
       addUtilities({
         /* Hide scrollbar for Chrome, Safari and Opera */
@@ -80,5 +82,50 @@ const config: Config = {
       addVariant("not-hover", "@media (hover: hover) and (pointer: fine)");
     }),
   ],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#1f2428",
+          secondary: "rgb(148 163 184)",
+          accent: "#e879f9",
+          neutral: "#24292e",
+          "base-100": "#1f2428",
+        },
+      },
+      "light",
+      "dark",
+      "cupcake",
+      "bumblebee",
+      "emerald",
+      "corporate",
+      "synthwave",
+      "retro",
+      "cyberpunk",
+      "valentine",
+      "halloween",
+      "garden",
+      "forest",
+      "aqua",
+      "lofi",
+      "pastel",
+      "fantasy",
+      "wireframe",
+      "black",
+      "luxury",
+      "dracula",
+      "cmyk",
+      "autumn",
+      "business",
+      "acid",
+      "lemonade",
+      "night",
+      "coffee",
+      "winter",
+      "dim",
+      "nord",
+      "sunset",
+    ],
+  },
 };
 export default config;

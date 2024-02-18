@@ -39,9 +39,56 @@ function Sidebar() {
     );
   }
 
+  function ThemeController() {
+    return (
+      <div className="dropdown mb-72">
+        <div
+          tabIndex={0}
+          role="button"
+          className="btn m-1"
+        >
+          Theme
+        </div>
+        <ul
+          tabIndex={0}
+          className="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl"
+        >
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Default"
+              value="default"
+            />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Dark"
+              value="dark"
+            />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Light"
+              value="light"
+            />
+          </li>
+        </ul>
+      </div>
+    );
+  }
+
   function SettingComponent() {
     return (
       <div className="items-cente flex w-full flex-col">
+        <ThemeController />
         <div
           className={cn(
             "flex aspect-square w-full cursor-pointer flex-col items-center justify-center hover:bg-dark-primary",
