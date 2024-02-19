@@ -1,5 +1,6 @@
 "use client";
 
+import { useThemeStore } from "@/providers/themeProviders";
 import { cn } from "@/utils/cn";
 import { useMemo, useRef } from "react";
 import { useMouse } from "react-use";
@@ -7,6 +8,13 @@ import { useMouse } from "react-use";
 function ContactPage() {
   const ref = useRef(null);
   const { elX, elY } = useMouse(ref);
+  const { theme, setTheme } = useThemeStore((state) => state);
+
+  const isLightTheme = (() => {
+    if (theme === "light" || theme === "cupcake" || theme === "retro") return true;
+    return false;
+  })();
+
   const contactItems = [
     {
       social: "website",
@@ -32,7 +40,7 @@ function ContactPage() {
   function CodeStyleBlock() {
     return (
       <div className="my-6 w-fit whitespace-pre text-xl selection:bg-indigo-300 selection:text-indigo-900">
-        <span className="mr-4 select-none text-gray-400">1</span>
+        <span className="text-neutral mr-4 select-none">1</span>
         <span className="text-orange-400">{".socials "}</span>
         <span className="text-yellow-400">{"{"}</span>
 
@@ -41,7 +49,7 @@ function ContactPage() {
             key={idx}
             className=""
           >
-            <span className="mr-4 select-none text-gray-400">{idx + 2}</span>
+            <span className="text-neutral mr-4 select-none">{idx + 2}</span>
             {`  ${social}: `}
             <a
               className="text-orange-400"
@@ -52,7 +60,7 @@ function ContactPage() {
             <span>;</span>
           </div>
         ))}
-        <span className="mr-4 select-none text-gray-400">{contactItems.length + 2}</span>
+        <span className="text-neutral mr-4 select-none">{contactItems.length + 2}</span>
         <span className="text-yellow-400">{"}"}</span>
       </div>
     );
@@ -63,12 +71,19 @@ function ContactPage() {
     <div
       ref={ref}
       style={
-        elX && elY
-          ? {
-              background: `#24292e radial-gradient(50% 50% at ${elX}px ${elY}px
+        isLightTheme
+          ? elX && elY
+            ? {
+                background: `#eaead9 radial-gradient(50% 50% at ${elX}px ${elY}px
+                , rgba(43, 232, 43, 0.48), transparent 80%)`,
+              }
+            : { background: "#eaead9" }
+          : elX && elY
+            ? {
+                background: `#1f2428 radial-gradient(50% 50% at ${elX}px ${elY}px
                 , rgba(52, 176, 60, .05), transparent 80%)`,
-            }
-          : { background: "#24292e" }
+              }
+            : { background: "#1f2428" }
       }
       className={cn("flex-1 p-8 font-tech")}
     >
