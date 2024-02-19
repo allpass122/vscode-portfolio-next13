@@ -1,17 +1,18 @@
-import { cn } from "@/utils/cn";
-import type { Metadata } from "next";
-import { Inter, Share_Tech_Mono, Press_Start_2P } from "next/font/google";
-import { Suspense } from "react";
 import Explorer from "@/app/_component/explorer";
 import Footer from "@/app/_component/footer";
 import HeaderBar from "@/app/_component/headerBar";
 import Sidebar from "@/app/_component/sideBar";
 import Tab from "@/app/_component/tab";
+import ThemeWrap from "@/app/_component/themeWrap";
 import "@/app/globals.css";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ActivityStoreProvider } from "@/providers/activityProviders";
 import { ThemeStoreProvider } from "@/providers/themeProviders";
-import ThemeWrap from "@/app/_component/themeWrap";
+import { cn } from "@/utils/cn";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+import { Inter, Press_Start_2P, Share_Tech_Mono } from "next/font/google";
+import { Suspense } from "react";
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -61,6 +62,7 @@ export default function RootLayout({
           <ThemeStoreProvider>
             <ThemeWrap>
               <SpeedInsights />
+              <Analytics />
               <HeaderBar />
               <Suspense>
                 <div className="flex flex-1 flex-row">
