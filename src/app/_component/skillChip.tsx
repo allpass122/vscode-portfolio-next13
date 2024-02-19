@@ -1,5 +1,6 @@
 import { useThemeStore } from "@/providers/themeProviders";
 import { cn } from "@/utils/cn";
+import { checkLightTheme } from "@/utils/theme";
 
 export type ChipSet =
   | "nextjs"
@@ -22,10 +23,7 @@ export type ChipSet =
 function SkillChip({ name }: { name: ChipSet }) {
   const { theme } = useThemeStore((state) => state);
 
-  const isLightTheme = (() => {
-    if (theme === "light" || theme === "cupcake" || theme === "retro") return true;
-    return false;
-  })();
+  const isLightTheme = checkLightTheme(theme);
 
   const chipClassName =
     "flex-wrap flex h-6 cursor-pointer select-none content-center rounded-3xl border-2  px-2 py-1 text-sm";

@@ -1,6 +1,7 @@
 "use client";
 
 import { useThemeStore } from "@/providers/themeProviders";
+import { checkLightTheme } from "@/utils/theme";
 import dayjs from "dayjs";
 import { parseAsInteger, useQueryState } from "nuqs";
 import GitHubCalendar from "react-github-calendar";
@@ -12,10 +13,7 @@ function GithubCalendar({ username, user }: { username: string; user: any }) {
   const [year, setYear] = useQueryState(username, parseAsInteger.withDefault(currentYear));
   const { theme } = useThemeStore((state) => state);
 
-  const isLightTheme = (() => {
-    if (theme === "light" || theme === "cupcake" || theme === "retro") return true;
-    return false;
-  })();
+  const isLightTheme = checkLightTheme(theme);
 
   return (
     <div className="flex w-full flex-col items-start">

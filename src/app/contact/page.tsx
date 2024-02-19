@@ -2,18 +2,16 @@
 
 import { useThemeStore } from "@/providers/themeProviders";
 import { cn } from "@/utils/cn";
+import { checkLightTheme } from "@/utils/theme";
 import { useMemo, useRef } from "react";
 import { useMouse } from "react-use";
 
 function ContactPage() {
   const ref = useRef(null);
   const { elX, elY } = useMouse(ref);
-  const { theme, setTheme } = useThemeStore((state) => state);
+  const { theme } = useThemeStore((state) => state);
 
-  const isLightTheme = (() => {
-    if (theme === "light" || theme === "cupcake" || theme === "retro") return true;
-    return false;
-  })();
+  const isLightTheme = checkLightTheme(theme);
 
   const contactItems = [
     {

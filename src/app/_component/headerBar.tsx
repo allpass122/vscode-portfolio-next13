@@ -49,6 +49,24 @@ function HeaderBar() {
               type="radio"
               name="theme-dropdown"
               className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Dracula"
+              value="dracula"
+            />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              aria-label="Luxury"
+              value="luxury"
+            />
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="theme-dropdown"
+              className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
               aria-label="Light"
               value="light"
             />
@@ -76,8 +94,8 @@ function HeaderBar() {
               type="radio"
               name="theme-dropdown"
               className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="Dracula"
-              value="dracula"
+              aria-label="Winter"
+              value="winter"
             />
           </li>
           <li>
@@ -85,8 +103,8 @@ function HeaderBar() {
               type="radio"
               name="theme-dropdown"
               className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="Luxury"
-              value="luxury"
+              aria-label="Wireframe"
+              value="wireframe"
             />
           </li>
         </ul>
