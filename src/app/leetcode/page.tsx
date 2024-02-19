@@ -26,11 +26,11 @@ async function LeetcodePage() {
   return (
     <div className="bg-base-100 flex grow flex-col p-8 font-cmono">
       <div className="flex flex-row flex-wrap gap-2">
-        <div className="rounded-lg bg-dark-primary p-4">
-          <div className="flex flex-row items-center gap-2 text-xl">
-            <SiLeetcode className=" text-orange-300" /> Leetcode Profile
+        <div className="bg-base-200 rounded-lg p-4">
+          <div className="prose flex flex-row items-center gap-2 text-xl">
+            <SiLeetcode className="text-orange-300" /> Leetcode Profile
           </div>
-          <div className="my-0.5 h-[1px] w-full bg-white" />
+          <div className="bg-primary my-0.5 h-[1px] w-full" />
           <div className="flex justify-center">
             <Image
               rel="preload"
@@ -42,14 +42,14 @@ async function LeetcodePage() {
             />
           </div>
           <a
-            className="font-inter text-white"
+            className="prose font-inter"
             href={`https://leetcode.com/${process.env.NEXT_PUBLIC_LEETCODE_USERNAME}/`}
             target="_blank"
             rel="noreferrer"
           >
             {matchedUser?.username}
           </a>
-          <div className="my-1 h-[1px] w-full bg-white" />
+          <div className="bg-primary my-1 h-[1px] w-full" />
           <div className="my-2 flex flex-col">
             {languageProblemCount.map(({ languageName, problemsSolved }) => (
               <div
@@ -60,15 +60,15 @@ async function LeetcodePage() {
                   {languageName}
                 </div>
                 <div className="flex flex-row items-center">
-                  <span className="text-sm text-white">{problemsSolved}</span>
-                  <span className="whitespace-pre text-xs text-gray-300"> problems solved</span>
+                  <span className="prose text-sm">{problemsSolved}</span>
+                  <span className="whitespace-pre text-xs text-orange-300"> problems solved</span>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="flex h-fit grow flex-col rounded-lg bg-dark-primary p-4">
-          <span className="mb-4 text-xl text-white">Solved Problems</span>
+        <div className="bg-base-200 flex h-fit grow flex-col rounded-lg p-4">
+          <span className="prose mb-4 text-xl">Solved Problems</span>
           <div className="flex flex-row items-center">
             <SolvedProblemCircle
               allQuestionsCount={allQuestionsCount}
@@ -77,16 +77,16 @@ async function LeetcodePage() {
             <div className="m-4 flex w-full flex-col">
               <div className="mb-4">
                 <div className="flex flex-row justify-between">
-                  <span className="mr-8 whitespace-pre text-base text-gray-200">
+                  <span className="prose mr-8 whitespace-pre text-base">
                     {"Easy  "}
                     <span>
-                      <span className="text-lg text-white">{acSubmissionNum.Easy}</span>
-                      <span className="text-sm text-gray-500">{`/${allQuestionsCount.Easy}`}</span>
+                      <span className="text-primary text-lg">{acSubmissionNum.Easy}</span>
+                      <span className="prose text-sm">{`/${allQuestionsCount.Easy}`}</span>
                     </span>
                   </span>
-                  <span className="whitespace-pre text-sm text-gray-500">
+                  <span className="prose whitespace-pre text-sm">
                     beats
-                    <span className="text-lg text-white">{` ${problemsSolvedBeatsStats.Easy} `}</span>
+                    <span className="text-primary text-lg">{` ${problemsSolvedBeatsStats.Easy} `}</span>
                     %
                   </span>
                 </div>
@@ -99,16 +99,16 @@ async function LeetcodePage() {
               </div>
               <div className="mb-4">
                 <div className="flex flex-row justify-between">
-                  <span className="mr-8 whitespace-pre text-base text-gray-200">
+                  <span className="prose mr-8 whitespace-pre text-base">
                     {"Medium  "}
                     <span>
-                      <span className="text-lg text-white">{acSubmissionNum.Medium}</span>
-                      <span className="text-sm text-gray-500">{`/${allQuestionsCount.Medium}`}</span>
+                      <span className="text-primary text-lg">{acSubmissionNum.Medium}</span>
+                      <span className="prose text-sm">{`/${allQuestionsCount.Medium}`}</span>
                     </span>
                   </span>
-                  <span className="whitespace-pre text-sm text-gray-500">
+                  <span className="prose whitespace-pre text-sm">
                     beats
-                    <span className="text-lg text-white">{` ${problemsSolvedBeatsStats.Medium} `}</span>
+                    <span className="text-primary text-lg">{` ${problemsSolvedBeatsStats.Medium} `}</span>
                     %
                   </span>
                 </div>
@@ -123,16 +123,16 @@ async function LeetcodePage() {
               </div>
               <div className="mb-4">
                 <div className="flex flex-row justify-between">
-                  <span className="mr-8 whitespace-pre text-base text-gray-200">
+                  <span className="prose mr-8 whitespace-pre text-base">
                     {"Hard  "}
                     <span>
-                      <span className="text-lg text-white">{acSubmissionNum.Hard}</span>
-                      <span className="text-sm text-gray-500">{`/${allQuestionsCount.Hard}`}</span>
+                      <span className="text-primary text-lg">{acSubmissionNum.Hard}</span>
+                      <span className="prose text-sm">{`/${allQuestionsCount.Hard}`}</span>
                     </span>
                   </span>
-                  <span className="whitespace-pre text-sm text-gray-500">
+                  <span className="prose whitespace-pre text-sm">
                     beats
-                    <span className="text-lg text-white">{` ${problemsSolvedBeatsStats.Hard} `}</span>
+                    <span className="text-primary text-lg">{` ${problemsSolvedBeatsStats.Hard} `}</span>
                     %
                   </span>
                 </div>

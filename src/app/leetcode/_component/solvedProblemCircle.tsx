@@ -13,6 +13,7 @@ function SolvedProblemCircle({
 }) {
   const [hovered, setHovered] = useState(false);
   const percentage = +((acSubmissionNum.All * 100) / allQuestionsCount.All).toFixed(1);
+
   return (
     <div
       className="relative m-4"
@@ -24,16 +25,16 @@ function SolvedProblemCircle({
           {hovered ? (
             <span className="text-2xl font-bold">
               {Math.floor(percentage)}
-              <span className="text-base">{`.${percentage - Math.floor(percentage)}%`}</span>
+              <span className="text-base">{`${(percentage - Math.floor(percentage)).toFixed(1).slice(1)}%`}</span>
             </span>
           ) : (
             <span className="text-2xl font-bold">{acSubmissionNum.All}</span>
           )}
-          <span className="text-base text-gray-400">solved</span>
+          <span className="text-base text-gray-500">solved</span>
         </div>
       </div>
       <div className="flex size-32 flex-col items-center justify-center">
-        <ProgressCircle percentage={percentage} />
+        <ProgressCircle percentage={+percentage.toFixed(1)} />
       </div>
     </div>
   );
