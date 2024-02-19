@@ -56,23 +56,23 @@ function ProjectPage() {
   function ProjectCard({ project }: { project: Project }) {
     return (
       <div className="flex-0 relative basis-1/4 flex-col rounded-lg p-4">
-        <div className="min-h-[250px] min-w-[180px] gap-2 rounded-lg border border-yellow-400 bg-dark-primary p-4">
+        <div className="bg-base-200 border-secondary min-h-[250px] min-w-[180px] gap-2 rounded-lg border p-4">
           {project.teamProject && (
             <InfoIcon
-              className="absolute right-0 top-0 z-10 size-8 cursor-pointer rounded-full bg-dark-primary text-yellow-400"
+              className="bg-base-200 text-secondary absolute right-0 top-0 z-10 size-8 cursor-pointer rounded-full"
               onMouseEnter={() => setHovered(project.title)}
               onMouseLeave={() => setHovered(null)}
             />
           )}
           {hover === project.title && (
-            <div className="absolute right-8 top-[-2rem] z-20 text-pretty rounded border border-yellow-400 bg-dark-primary p-2 font-inter ">
+            <div className="border-secondary bg-base-200 absolute right-8 top-[-2rem] z-20 text-pretty rounded border p-2 font-inter ">
               {project.teamProjectParticipation}
             </div>
           )}
-          <div className="mb-2 gap-2 rounded font-cmono text-xl font-bold text-yellow-400">
+          <div className="text-secondary mb-2 gap-2 rounded font-cmono text-xl font-bold">
             {project.title}
           </div>
-          <div className="text-basic text-yellow-200">{project.description}</div>
+          <div className="text-basic text-secondary">{project.description}</div>
           <div className="my-4 flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <SkillChip
@@ -83,7 +83,7 @@ function ProjectPage() {
           </div>
           {project.sourceCode && (
             <a
-              className="mr-4 border-b"
+              className="border-secondary mr-4 border-b"
               href={project.sourceCode}
               target="_blank"
               rel="noreferrer"
@@ -93,7 +93,7 @@ function ProjectPage() {
           )}
           {project.demo && (
             <a
-              className="mr-4 border-b"
+              className="border-secondary mr-4 border-b"
               href={project.demo}
               target="_blank"
               rel="noreferrer"
@@ -113,7 +113,7 @@ function ProjectPage() {
           My Project List
         </div>
         <div className="flex flex-wrap items-center whitespace-pre">
-          <InfoIcon className="size-4 cursor-pointer rounded-full bg-dark-primary text-yellow-400" />{" "}
+          <InfoIcon className="bg-base-200 text-secondary size-4 cursor-pointer rounded-full" />{" "}
           <span> = team project, otherwise personal project. Hover to see details</span>
         </div>
         <div className="my-4 flex flex-row flex-wrap">
