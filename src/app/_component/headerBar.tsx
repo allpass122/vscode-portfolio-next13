@@ -2,11 +2,10 @@
 
 import { useThemeStore } from "@/providers/themeProviders";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 function HeaderBar() {
-  const { theme, setTheme } = useThemeStore((state) => state);
-  const router = useRouter();
+  const { setTheme } = useThemeStore((state) => state);
+
   function ThemeController() {
     return (
       <div
@@ -14,8 +13,6 @@ function HeaderBar() {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         onChange={(e: any) => {
           setTheme(e.target.value);
-          // find html element and set theme
-          // document.getElementsByTagName("html")[0].setAttribute("data-theme", theme);
         }}
       >
         <div

@@ -40,7 +40,7 @@ function ContactPage() {
   function CodeStyleBlock() {
     return (
       <div className="my-6 w-fit whitespace-pre text-xl selection:bg-indigo-300 selection:text-indigo-900">
-        <span className="text-neutral mr-4 select-none">1</span>
+        <span className="prose mr-4 select-none">1</span>
         <span className="text-orange-400">{".socials "}</span>
         <span className="text-yellow-400">{"{"}</span>
 
@@ -49,8 +49,8 @@ function ContactPage() {
             key={idx}
             className=""
           >
-            <span className="text-neutral mr-4 select-none">{idx + 2}</span>
-            {`  ${social}: `}
+            <span className="prose mr-4 select-none">{idx + 2}</span>
+            <span className="prose text-xl">{`  ${social}: `}</span>
             <a
               className="text-orange-400"
               target="_blank"
@@ -60,7 +60,7 @@ function ContactPage() {
             <span>;</span>
           </div>
         ))}
-        <span className="text-neutral mr-4 select-none">{contactItems.length + 2}</span>
+        <span className="prose mr-4 select-none">{contactItems.length + 2}</span>
         <span className="text-yellow-400">{"}"}</span>
       </div>
     );
@@ -96,7 +96,7 @@ function ContactPage() {
           Reach Out Via Socials
         </div>
       </div>
-      <div className="font-cmono">{"hint: click above title or select above code :>"}</div>
+      <div className="prose font-cmono">{"hint: click above title or select above code :>"}</div>
       <MemoizedCodeStyleBlock />
     </div>
   );

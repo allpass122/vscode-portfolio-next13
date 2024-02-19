@@ -5,7 +5,6 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/utils/cn";
 import { useActivityStore } from "@/providers/activityProviders";
 
-// TODO: dnd-toolkit
 function Tab() {
   const router = useRouter();
   const { list } = useActivityStore((state) => state);
@@ -21,7 +20,7 @@ function Tab() {
             <div
               key={item.title}
               className={cn(
-                "border-neutral font flex cursor-pointer flex-row items-center gap-2 rounded-sm border-r px-4 py-1.5 text-sm",
+                "border-neutral prose flex cursor-pointer flex-row items-center gap-2 rounded-sm border-r px-4 py-1.5 text-sm",
                 pathname !== "/" &&
                   item.path.startsWith(pathname) &&
                   "bg-base-100 border-t-2 border-y-amber-400"

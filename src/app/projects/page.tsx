@@ -65,15 +65,15 @@ function ProjectPage() {
             />
           )}
           {hover === project.title && (
-            <div className="border-secondary bg-base-200 absolute right-8 top-[-2rem] z-20 text-pretty rounded border p-2 font-inter ">
+            <div className="border-secondary prose bg-base-200 absolute right-8 top-[-2rem] z-20 text-pretty rounded border p-2 font-inter ">
               {project.teamProjectParticipation}
             </div>
           )}
-          <div className="text-secondary mb-2 gap-2 rounded font-cmono text-xl font-bold">
+          <div className="prose mb-2 gap-2 rounded font-cmono text-xl font-bold">
             {project.title}
           </div>
-          <div className="text-basic text-secondary">{project.description}</div>
-          <div className="my-4 flex flex-wrap gap-2">
+          <div className="text-basic prose">{project.description}</div>
+          <div className="prose my-4 flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <SkillChip
                 key={tag}
@@ -83,7 +83,7 @@ function ProjectPage() {
           </div>
           {project.sourceCode && (
             <a
-              className="border-secondary mr-4 border-b"
+              className="prose border-secondary mr-4 border-b"
               href={project.sourceCode}
               target="_blank"
               rel="noreferrer"
@@ -93,7 +93,7 @@ function ProjectPage() {
           )}
           {project.demo && (
             <a
-              className="border-secondary mr-4 border-b"
+              className="prose border-secondary mr-4 border-b"
               href={project.demo}
               target="_blank"
               rel="noreferrer"
@@ -114,7 +114,10 @@ function ProjectPage() {
         </div>
         <div className="flex flex-wrap items-center whitespace-pre">
           <InfoIcon className="bg-base-200 text-secondary size-4 cursor-pointer rounded-full" />{" "}
-          <span> = team project, otherwise personal project. Hover to see details</span>
+          <span className="prose">
+            {" "}
+            = team project, otherwise personal project. Hover to see details
+          </span>
         </div>
         <div className="my-4 flex flex-row flex-wrap">
           {projects.map((project) => (

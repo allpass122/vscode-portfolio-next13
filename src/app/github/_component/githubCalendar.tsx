@@ -10,7 +10,7 @@ function GithubCalendar({ username, user }: { username: string; user: any }) {
   const currentYear = dayjs().year();
   const createdAtDate = dayjs(user.created_at);
   const [year, setYear] = useQueryState(username, parseAsInteger.withDefault(currentYear));
-  const { theme, setTheme } = useThemeStore((state) => state);
+  const { theme } = useThemeStore((state) => state);
 
   const isLightTheme = (() => {
     if (theme === "light" || theme === "cupcake" || theme === "retro") return true;
@@ -18,9 +18,9 @@ function GithubCalendar({ username, user }: { username: string; user: any }) {
   })();
 
   return (
-    <div className="flex flex-col items-start">
+    <div className="flex w-full flex-col items-start">
       <select
-        className="select select-xs mb-4 w-fit"
+        className="select select-xs prose mb-4 w-fit"
         onChange={(e) => {
           setYear(+e.target.value);
         }}

@@ -18,7 +18,7 @@ async function GithubPage() {
             />
           </div>
           <a
-            className="text-primary font-inter"
+            className="prose font-inter"
             href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
             target="_blank"
             rel="noreferrer"

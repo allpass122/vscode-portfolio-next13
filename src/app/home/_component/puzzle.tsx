@@ -84,7 +84,7 @@ function Puzzle() {
           alt="dnd-kit_logo"
         />
       </span>
-      <span className=" font-cmono text-base">finish puzzle to navigate!</span>
+      <span className="prose font-cmono text-base">finish puzzle to navigate!</span>
       <div className="flex flex-1 flex-col justify-evenly">
         <DndContext
           id={"context1"}

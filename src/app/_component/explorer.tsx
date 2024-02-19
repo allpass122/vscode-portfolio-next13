@@ -69,7 +69,7 @@ function Explorer() {
   const { list } = useActivityStore((state) => state);
 
   return (
-    <div className="bg-base-100 border-neutral text-primary/50 flex w-[150px] select-none flex-col border-r-[0.5px]">
+    <div className="bg-base-100 border-neutral prose flex w-[150px] select-none flex-col border-r-[0.5px]">
       <div className="flex flex-row items-center justify-between p-4 font-sans text-xs font-extralight">
         EXPLORER <MoreHorizontal className="size-3" />
       </div>

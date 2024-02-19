@@ -1,3 +1,4 @@
+import { useThemeStore } from "@/providers/themeProviders";
 import { cn } from "@/utils/cn";
 
 export type ChipSet =
@@ -19,58 +20,209 @@ export type ChipSet =
   | "strapi";
 
 function SkillChip({ name }: { name: ChipSet }) {
+  const { theme } = useThemeStore((state) => state);
+
+  const isLightTheme = (() => {
+    if (theme === "light" || theme === "cupcake" || theme === "retro") return true;
+    return false;
+  })();
+
   const chipClassName =
     "flex-wrap flex h-6 cursor-pointer select-none content-center rounded-3xl border-2  px-2 py-1 text-sm";
   const NextjsChip = (() => {
-    return <div className={cn(chipClassName, "border-blue-400 hover:bg-blue-800")}>nextjs</div>;
+    return (
+      <div
+        className={cn(
+          chipClassName,
+          "border-blue-400 hover:bg-blue-200",
+          !isLightTheme && "hover:bg-blue-800"
+        )}
+      >
+        nextjs
+      </div>
+    );
   })();
   const TailwindChip = (() => {
-    return <div className={cn(chipClassName, "border-green-400 hover:bg-green-800")}>tailwind</div>;
+    return (
+      <div
+        className={cn(
+          chipClassName,
+          "border-green-400 hover:bg-green-200",
+          !isLightTheme && "hover:bg-green-800"
+        )}
+      >
+        tailwind
+      </div>
+    );
   })();
   const NuqsChip = (() => {
-    return <div className={cn(chipClassName, "border-red-400 hover:bg-red-800")}>nuqs</div>;
+    return (
+      <div
+        className={cn(
+          chipClassName,
+          "border-red-400 hover:bg-red-200",
+          !isLightTheme && "hover:bg-red-800"
+        )}
+      >
+        nuqs
+      </div>
+    );
   })();
   const HeadlessUIChip = (() => {
     return (
-      <div className={cn(chipClassName, "border-gray-400 hover:bg-gray-800")}>headless-ui</div>
+      <div
+        className={cn(
+          chipClassName,
+          "border-gray-400 hover:bg-gray-200",
+          !isLightTheme && "hover:bg-gray-800"
+        )}
+      >
+        headless-ui
+      </div>
     );
   })();
   const ReactQueryChip = (() => {
     return (
-      <div className={cn(chipClassName, "border-orange-400 hover:bg-orange-800")}>react-query</div>
+      <div
+        className={cn(
+          chipClassName,
+          "border-orange-400 hover:bg-orange-200",
+          !isLightTheme && "hover:bg-orange-800"
+        )}
+      >
+        react-query
+      </div>
     );
   })();
   const ZodChip = (() => {
-    return <div className={cn(chipClassName, "border-purple-400 hover:bg-purple-800")}>zod</div>;
+    return (
+      <div
+        className={cn(
+          chipClassName,
+          "border-purple-400 hover:bg-purple-200",
+          !isLightTheme && "hover:bg-purple-800"
+        )}
+      >
+        zod
+      </div>
+    );
   })();
   const JoiChip = (() => {
-    return <div className={cn(chipClassName, "border-purple-400 hover:bg-purple-800")}>joi</div>;
+    return (
+      <div
+        className={cn(
+          chipClassName,
+          "border-purple-400 hover:bg-purple-200",
+          !isLightTheme && "hover:bg-purple-800"
+        )}
+      >
+        joi
+      </div>
+    );
   })();
   const NextIntlChip = (() => {
-    return <div className={cn(chipClassName, "border-sky-400 hover:bg-sky-800")}>next-intl</div>;
+    return (
+      <div
+        className={cn(
+          chipClassName,
+          "border-sky-400 hover:bg-sky-200",
+          !isLightTheme && "hover:bg-sky-800"
+        )}
+      >
+        next-intl
+      </div>
+    );
   })();
   const MuiChip = (() => {
-    return <div className={cn(chipClassName, "border-purple-400 hover:bg-purple-800")}>mui</div>;
+    return (
+      <div
+        className={cn(
+          chipClassName,
+          "border-purple-400 hover:bg-purple-200",
+          !isLightTheme && "hover:bg-purple-800"
+        )}
+      >
+        mui
+      </div>
+    );
   })();
   const PostgresChip = (() => {
-    return <div className={cn(chipClassName, "border-sky-400 hover:bg-sky-800")}>postgres</div>;
+    return (
+      <div
+        className={cn(
+          chipClassName,
+          "border-sky-400 hover:bg-sky-200",
+          !isLightTheme && "hover:bg-sky-800"
+        )}
+      >
+        postgres
+      </div>
+    );
   })();
   const DndKitChip = (() => {
     return (
-      <div className={cn(chipClassName, "border-orange-400 hover:bg-orange-800")}>dnd-kit</div>
+      <div
+        className={cn(
+          chipClassName,
+          "border-orange-400 hover:bg-orange-200",
+          !isLightTheme && "hover:bg-orange-800"
+        )}
+      >
+        dnd-kit
+      </div>
     );
   })();
   const KnexChip = (() => {
-    return <div className={cn(chipClassName, "border-gray-400 hover:bg-gray-800")}>knex</div>;
+    return (
+      <div
+        className={cn(
+          chipClassName,
+          "border-gray-400 hover:bg-gray-200",
+          !isLightTheme && "hover:bg-gray-800"
+        )}
+      >
+        knex
+      </div>
+    );
   })();
   const NodeChip = (() => {
-    return <div className={cn(chipClassName, "border-green-400 hover:bg-green-800")}>node</div>;
+    return (
+      <div
+        className={cn(
+          chipClassName,
+          "border-green-400 hover:bg-green-200",
+          !isLightTheme && "hover:bg-green-800"
+        )}
+      >
+        node
+      </div>
+    );
   })();
   const AntdChip = (() => {
-    return <div className={cn(chipClassName, "border-pink-400 hover:bg-pink-800")}>antd</div>;
+    return (
+      <div
+        className={cn(
+          chipClassName,
+          "border-pink-400 hover:bg-pink-200",
+          !isLightTheme && "hover:bg-pink-800"
+        )}
+      >
+        antd
+      </div>
+    );
   })();
   const StrapiChip = (() => {
-    return <div className={cn(chipClassName, "border-pink-400 hover:bg-pink-800")}>strapi</div>;
+    return (
+      <div
+        className={cn(
+          chipClassName,
+          "border-pink-400 hover:bg-pink-200",
+          !isLightTheme && "hover:bg-pink-800"
+        )}
+      >
+        strapi
+      </div>
+    );
   })();
 
   if (name === "nextjs") return NextjsChip;
@@ -88,7 +240,17 @@ function SkillChip({ name }: { name: ChipSet }) {
   if (name === "node") return NodeChip;
   if (name === "antd") return AntdChip;
   if (name === "strapi") return StrapiChip;
-  return <div className={cn(chipClassName, "border-blue-400 hover:bg-blue-800")}>{name}</div>;
+  return (
+    <div
+      className={cn(
+        chipClassName,
+        "border-blue-400 hover:bg-blue-200",
+        !isLightTheme && "hover:bg-blue-800"
+      )}
+    >
+      {name}
+    </div>
+  );
 }
 
 export default SkillChip;

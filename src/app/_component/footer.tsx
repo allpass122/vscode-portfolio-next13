@@ -48,7 +48,7 @@ function Footer() {
   }
 
   return (
-    <div className="bg-base-100 border-neutral text-primary/50 flex h-6 select-none items-center justify-between border-t-[0.5px] px-2">
+    <div className="bg-base-100 border-neutral flex h-6 select-none items-center justify-between border-t-[0.5px] px-2">
       <GitBranchComponent />
       <ToolBoxComponent />
     </div>
