@@ -54,12 +54,12 @@ export const explorerItems: {
     path: "/contact",
     icon: <BiLogoTailwindCss className="size-4 text-cyan-500" />,
   },
-  {
-    title: "leetcode",
-    label: "leetcode.cpp",
-    path: "/leetcode",
-    icon: <SiLeetcode className="size-4 text-orange-500" />,
-  },
+  // {
+  //   title: "leetcode",
+  //   label: "leetcode.cpp",
+  //   path: "/leetcode",
+  //   icon: <SiLeetcode className="size-4 text-orange-500" />,
+  // },
 ];
 
 function Explorer() {
@@ -69,7 +69,7 @@ function Explorer() {
   const { list } = useActivityStore((state) => state);
 
   return (
-    <div className="bg-base-100 border-neutral prose flex w-[150px] select-none flex-col border-r-[0.5px]">
+    <div className="prose flex w-[150px] select-none flex-col border-r-[0.5px] border-neutral bg-base-100">
       <div className="flex flex-row items-center justify-between p-4 font-sans text-xs font-extralight">
         EXPLORER <MoreHorizontal className="size-3" />
       </div>
@@ -88,7 +88,7 @@ function Explorer() {
                 list.filter((l) => l.name === item.title && l.disabled === false).length > 0) && (
                 <div
                   key={item.title}
-                  className="hover:bg-primary/40 flex cursor-pointer flex-row items-center gap-1 rounded-sm px-4 py-1.5 text-sm font-light"
+                  className="flex cursor-pointer flex-row items-center gap-1 rounded-sm px-4 py-1.5 text-sm font-light hover:bg-primary/40"
                   onClick={() => {
                     router.push(`${item.path}?${searchParams.toString()}`);
                   }}

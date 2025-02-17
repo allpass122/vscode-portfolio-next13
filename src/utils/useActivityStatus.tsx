@@ -37,9 +37,9 @@ export const activityItems: {
     path: "/contact",
     icon: <Mail className={"size-3/5 "} />,
   },
-  {
-    title: "leetcode",
-    path: "/leetcode",
-    icon: <SiLeetcode className={"size-3/5 "} />,
-  },
+  // {
+  //   title: "leetcode",
+  //   path: "/leetcode",
+  //   icon: <SiLeetcode className={"size-3/5 "} />,
+  // },
 ];

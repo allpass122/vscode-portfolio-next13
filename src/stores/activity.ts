@@ -36,10 +36,10 @@ export const defaultInitState: ActivityState = {
       name: "contact",
       disabled: false,
     },
-    {
-      name: "leetcode",
-      disabled: false,
-    },
+    // {
+    //   name: "leetcode",
+    //   disabled: false,
+    // },
   ],
 };
 

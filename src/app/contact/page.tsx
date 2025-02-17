@@ -24,11 +24,11 @@ function ContactPage() {
       link: "dges5102@gmail.com",
       href: "mailto:dges5102@gmail.com",
     },
-    {
-      social: "email (office)",
-      link: "dempsey@maijoe.com",
-      href: "mailto:dempsey@maijoe.com",
-    },
+    // {
+    //   social: "email (office)",
+    //   link: "dempsey@maijoe.com",
+    //   href: "mailto:dempsey@maijoe.com",
+    // },
     {
       social: "linkedIn",
       link: "wenyen huang",
